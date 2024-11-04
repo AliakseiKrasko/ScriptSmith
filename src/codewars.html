@@ -6,13 +6,13 @@
 </head>
 <body>
 <script>
-    function Main(str) {
-        debugger
-        let strArray = str.split('');
-        let reverseArray = strArray.reverse();
-        let reverseStr = reverseArray.join('')
-    }
-    Main('abc');
+    const reverseSeq = n => {
+
+        return Array.from({length: n}, (_, i) => n - i)
+
+    };
+
+    console.log(reverseSeq(5))
 
 </script>
 </body>
