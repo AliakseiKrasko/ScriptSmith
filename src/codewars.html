@@ -6,11 +6,10 @@
 </head>
 <body>
 <script>
-    function checkForFactor (base, factor) {
-        return base % factor === 0;
-
+    function validatePIN (pin) {
+        return (/^\d{4}$/.test(pin) || /^\d{6}$/.test(pin))
     }
-    console.log(checkForFactor(6, 2))
+    console.log(validatePIN('1234567'))
 
 </script>
 </body>
