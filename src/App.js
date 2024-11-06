@@ -1,5 +1,7 @@
 import {NewComponent} from "./components/NewComponent.tsx";
 import {ListComponent} from "./components/ListComponent.tsx";
+import {logDOM} from "@testing-library/react";
+
 
 function App() {
 
@@ -31,10 +33,19 @@ function App() {
         {manufacturer: 'Renault', model: 'Fufel', year: 2008, odometr: 25000 , condition: 'good' }
     ]
 
+    const foot1= ()=>{
+        console.log(100200);
+    }
+    const foot2= (num)=>{
+        console.log(num)
+    }
+
     return (
         <div className="App">
             <NewComponent topCars={topCars}/>
             <ListComponent students={students} />
+            <button onClick={foot1}>1</button>
+            <button onClick={()=>foot2(100200)}>2</button>
         </div>
     );
 }
