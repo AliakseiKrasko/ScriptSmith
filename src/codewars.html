@@ -6,15 +6,23 @@
 </head>
 <body>
 <script>
-    function enough(cap, on, wait) {
-        if((on + wait) > cap) {
-            return (on + wait) - cap
-        } else {
-            return 0
-        }
-    }
-    console.log(enough(40, 34, 16))
+    function duplicateEncode(word) {
+        const wordCase = word.toLowerCase();
+        const charCount = {};
 
+        // Заполняем объект с частотой каждого символа
+        for (const char of wordCase) {
+            charCount[char] = (charCount[char] || 0) + 1;
+        }
+
+        // Создаем новую строку с "(" или ")" на основе частоты
+        return wordCase
+            .split("")
+            .map((char) => (charCount[char] === 1 ? "(" : ")"))
+            .join("");
+    }
+
+    console.log(duplicateEncode("dedede"))
 </script>
 </body>
 </html>
