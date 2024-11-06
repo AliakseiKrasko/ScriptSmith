@@ -1,6 +1,6 @@
 import {NewComponent} from "./components/NewComponent.tsx";
 import {ListComponent} from "./components/ListComponent.tsx";
-import {logDOM} from "@testing-library/react";
+import {Button} from "./components/Button.tsx";
 
 
 function App() {
@@ -20,32 +20,37 @@ function App() {
     ]
 
 
-
     const topCars = [
-        {manufacturer: 'BMW', model: 'X5', year: 2008, odometr: 25000 , condition: 'good'},
-        {manufacturer: 'Mersedes', model: 'MLS', year: 2008, odometr: 25000 , condition: 'good'},
-        {manufacturer: 'Audi', model: 'Q7', year: 2008, odometr: 25000 , condition: 'good' },
-        {manufacturer: 'Ford', model: 'Kuga', year: 2008, odometr: 25000 , condition: 'good' },
-        {manufacturer: 'VW', model: 'Polo', year: 2008, odometr: 25000 , condition: 'good' },
-        {manufacturer: 'Subaru', model: 'Forester', year: 2008, odometr: 25000 , condition: 'good' },
-        {manufacturer: 'Isuzu', model: 'Dragon', year: 2008, odometr: 25000 , condition: 'good' },
-        {manufacturer: 'Opel', model: 'Kadet', year: 2008, odometr: 25000 , condition: 'good' },
-        {manufacturer: 'Renault', model: 'Fufel', year: 2008, odometr: 25000 , condition: 'good' }
+        {manufacturer: 'BMW', model: 'X5', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'Mersedes', model: 'MLS', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'Audi', model: 'Q7', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'Ford', model: 'Kuga', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'VW', model: 'Polo', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'Subaru', model: 'Forester', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'Isuzu', model: 'Dragon', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'Opel', model: 'Kadet', year: 2008, odometr: 25000, condition: 'good'},
+        {manufacturer: 'Renault', model: 'Fufel', year: 2008, odometr: 25000, condition: 'good'}
     ]
 
-    const foot1= ()=>{
-        console.log(100200);
+    const buttomFoo=(soscriber, age)=> {
+        console.log(soscriber)
     }
-    const foot2= (num)=>{
-        console.log(num)
+
+    const buttomFoo2=(soscriber, age)=> {
+        console.log(soscriber)
+    }
+
+    const buttomFoo3=(soscriber, age)=> {
+        console.log(soscriber)
     }
 
     return (
         <div className="App">
             <NewComponent topCars={topCars}/>
-            <ListComponent students={students} />
-            <button onClick={foot1}>1</button>
-            <button onClick={()=>foot2(100200)}>2</button>
+            <ListComponent students={students}/>
+            <Button name={'MyButton1'} callBack={()=>buttomFoo('Hello', 21)}/>
+            <Button name={'MyButton2'} callBack={()=>buttomFoo2('HiHiHi', 41)}/>
+            <Button name={'MyButton3'} callBack={()=>buttomFoo3('Hey', 32)}/>
         </div>
     );
 }
