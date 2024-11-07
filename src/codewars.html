@@ -6,23 +6,11 @@
 </head>
 <body>
 <script>
-    function duplicateEncode(word) {
-        const wordCase = word.toLowerCase();
-        const charCount = {};
-
-        // Заполняем объект с частотой каждого символа
-        for (const char of wordCase) {
-            charCount[char] = (charCount[char] || 0) + 1;
-        }
-
-        // Создаем новую строку с "(" или ")" на основе частоты
-        return wordCase
-            .split("")
-            .map((char) => (charCount[char] === 1 ? "(" : ")"))
-            .join("");
+    function longest(s1, s2) {
+        const unitSim = new Set( s1 + s2);
+        return [...unitSim].sort().join('')
     }
-
-    console.log(duplicateEncode("dedede"))
+    console.log(longest("jashfjkshfjka", "ascviahdvukah"))
 </script>
 </body>
 </html>
