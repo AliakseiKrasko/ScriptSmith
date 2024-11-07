@@ -6,11 +6,17 @@
 </head>
 <body>
 <script>
-    function longest(s1, s2) {
-        const unitSim = new Set( s1 + s2);
-        return [...unitSim].sort().join('')
+    function getMiddle(s) {
+        const length = s.length;
+        const middle = Math.floor(length / 2);
+
+        if (length % 2 !== 0) {
+            return s[middle]
+        } else {
+            return s[middle - 1] + s[middle]
+        }
     }
-    console.log(longest("jashfjkshfjka", "ascviahdvukah"))
+    console.log(getMiddle("hellko"))
 </script>
 </body>
 </html>
