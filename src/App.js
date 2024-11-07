@@ -1,6 +1,7 @@
 import {NewComponent} from "./components/NewComponent.tsx";
 import {ListComponent} from "./components/ListComponent.tsx";
 import {Button} from "./components/Button.tsx";
+import {useState} from "react";
 
 
 function App() {
@@ -44,6 +45,17 @@ function App() {
         console.log(soscriber)
     }
 
+    // let count = 0;
+    let[count, setCount] = useState(0);
+
+    const buttonCounter=()=>{
+        setCount(count+1)
+    }
+
+    const buttonReset=()=> {
+        setCount(count=0)
+    }
+
     return (
         <div className="App">
             <NewComponent topCars={topCars}/>
@@ -51,6 +63,9 @@ function App() {
             <Button name={'MyButton1'} callBack={()=>buttomFoo('Hello', 21)}/>
             <Button name={'MyButton2'} callBack={()=>buttomFoo2('HiHiHi', 41)}/>
             <Button name={'MyButton3'} callBack={()=>buttomFoo3('Hey', 32)}/>
+            <h1>{count}</h1>
+            <button onClick={buttonCounter}>+</button>
+            <button onClick={buttonReset}>0</button>
         </div>
     );
 }
