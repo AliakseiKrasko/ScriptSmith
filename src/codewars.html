@@ -6,34 +6,24 @@
 </head>
 <body>
 <script>
-    function bubbleSort(arr) {
-        let num = arr.length;
-        let swapped;
+    function quickSort (arr){
+        if(arr.length <= 1) return arr
 
-        for (let i = 0; i < num - 1; i++) {
-            swapped = false; // Сбрасываем swapped в false в начале каждого внешнего цикла
-
-            for (let j = 0; j < num - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    // Обмен значений между arr[j] и arr[j + 1]
-                    let temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    swapped = true; // Если произошла замена, swapped становится true
-                }
-            }
-
-            // Если ни одной замены не произошло, массив уже отсортирован
-            if (!swapped) {
-                break;
+        let pivot = arr[arr.length - 1];
+        let left = [];
+        let right = [];
+        for(let i = 0; i < arr.length - 1; i++) {
+            if(arr[i] < pivot) {
+                left.push(arr[i]);
+            } else {
+                right.push(arr[i]);
             }
         }
-        return arr; // Возвращаем отсортированный массив
-    }
 
-    // Пример использования
-    let arr = [5, 3, 8, 4, 2];
-    console.log(bubbleSort(arr)); // [2, 3, 4, 5, 8]
+        return [...quickSort(left), pivot, ...quickSort(right)]
+
+    }
+    console.log(quickSort([2, 5, 8, 32, 56, 5])); // [2, 3, 4, 5, 8]
 </script>
 </body>
 </html>
