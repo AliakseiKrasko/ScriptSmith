@@ -6,24 +6,21 @@
 </head>
 <body>
 <script>
-    function quickSort (arr){
-        if(arr.length <= 1) return arr
+    function queueTime(customers, n) {
+        if (n === 1) return customers.reduce((a, b) => a + b, 0); // Если только одна касса, возвращаем сумму
 
-        let pivot = arr[arr.length - 1];
-        let left = [];
-        let right = [];
-        for(let i = 0; i < arr.length - 1; i++) {
-            if(arr[i] < pivot) {
-                left.push(arr[i]);
-            } else {
-                right.push(arr[i]);
-            }
+        let tills = Array(n).fill(0); // Массив касс, каждая касса сначала свободна (0)
+
+        for (let time of customers) {
+            // Находим индекс кассы с минимальным временем
+            let nextTill = tills.indexOf(Math.min(...tills));
+            tills[nextTill] += time; // Добавляем время клиента к этой кассе
         }
 
-        return [...quickSort(left), pivot, ...quickSort(right)]
-
+        return Math.max(...tills); // Максимальное время укажет на общий необходимый
     }
-    console.log(quickSort([2, 5, 8, 32, 56, 5])); // [2, 3, 4, 5, 8]
+
+    console.log(queueTime([2, 4, 5], 2));
 </script>
 </body>
 </html>
