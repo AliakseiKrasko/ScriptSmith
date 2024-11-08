@@ -6,17 +6,34 @@
 </head>
 <body>
 <script>
-    function getMiddle(s) {
-        const length = s.length;
-        const middle = Math.floor(length / 2);
+    function bubbleSort(arr) {
+        let num = arr.length;
+        let swapped;
 
-        if (length % 2 !== 0) {
-            return s[middle]
-        } else {
-            return s[middle - 1] + s[middle]
+        for (let i = 0; i < num - 1; i++) {
+            swapped = false; // Сбрасываем swapped в false в начале каждого внешнего цикла
+
+            for (let j = 0; j < num - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Обмен значений между arr[j] и arr[j + 1]
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true; // Если произошла замена, swapped становится true
+                }
+            }
+
+            // Если ни одной замены не произошло, массив уже отсортирован
+            if (!swapped) {
+                break;
+            }
         }
+        return arr; // Возвращаем отсортированный массив
     }
-    console.log(getMiddle("hellko"))
+
+    // Пример использования
+    let arr = [5, 3, 8, 4, 2];
+    console.log(bubbleSort(arr)); // [2, 3, 4, 5, 8]
 </script>
 </body>
 </html>
