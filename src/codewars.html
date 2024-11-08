@@ -6,21 +6,13 @@
 </head>
 <body>
 <script>
-    function queueTime(customers, n) {
-        if (n === 1) return customers.reduce((a, b) => a + b, 0); // Если только одна касса, возвращаем сумму
-
-        let tills = Array(n).fill(0); // Массив касс, каждая касса сначала свободна (0)
-
-        for (let time of customers) {
-            // Находим индекс кассы с минимальным временем
-            let nextTill = tills.indexOf(Math.min(...tills));
-            tills[nextTill] += time; // Добавляем время клиента к этой кассе
-        }
-
-        return Math.max(...tills); // Максимальное время укажет на общий необходимый
+    function findShort(s) {
+        return Math.min(...s.split(' ').map(w => w.length))
     }
 
-    console.log(queueTime([2, 4, 5], 2));
+
+
+    console.log(findShort("ghgh jsk kkkkk"))
 </script>
 </body>
 </html>
