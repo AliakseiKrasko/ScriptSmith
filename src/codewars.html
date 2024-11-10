@@ -6,13 +6,11 @@
 </head>
 <body>
 <script>
-    function findShort(s) {
-        return Math.min(...s.split(' ').map(w => w.length))
+    function solution(string) {
+        return string.replace(/([A-Z])/g, " $1");
     }
+    console.log(solution('mouTfd'));
 
-
-
-    console.log(findShort("ghgh jsk kkkkk"))
 </script>
 </body>
 </html>
