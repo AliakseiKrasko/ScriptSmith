@@ -6,10 +6,11 @@
 </head>
 <body>
 <script>
-    function solution(string) {
-        return string.replace(/([A-Z])/g, " $1");
+    function minMax(arr){
+                return  [Math.min(...arr), Math.max(...arr)]
     }
-    console.log(solution('mouTfd'));
+
+    console.log(minMax([2, 4, 6, 2, 1]));
 
 </script>
 </body>
