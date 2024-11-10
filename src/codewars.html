@@ -6,11 +6,15 @@
 </head>
 <body>
 <script>
-    function minMax(arr){
-                return  [Math.min(...arr), Math.max(...arr)]
-    }
+    var uniqueInOrder = function(str) {
+        // Преобразуем строку в массив символов, если это строка
+        const arr = typeof str === 'string' ? str.split('') : str;
 
-    console.log(minMax([2, 4, 6, 2, 1]));
+        // Фильтруем элементы, убирая только последовательные дубликаты
+        return arr.filter((element, index) => element !== arr[index - 1]);
+    };
+
+    console.log(uniqueInOrder("AABBCDAAB")); // ['A', 'B', 'C', 'D', 'A', 'B']
 
 </script>
 </body>
