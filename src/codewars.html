@@ -6,15 +6,18 @@
 </head>
 <body>
 <script>
-    var uniqueInOrder = function(str) {
-        // Преобразуем строку в массив символов, если это строка
-        const arr = typeof str === 'string' ? str.split('') : str;
+    function findUniq(arr) {
+        if(arr[0] !== arr[1] && arr[0] !== arr[2]){
+            return arr[0]
+        }
+        if(arr[1] !== arr[0] && arr[1] !== arr[2]) {
+            return arr[1]
+        }
+        return arr.find(e => e !== arr[0])
 
-        // Фильтруем элементы, убирая только последовательные дубликаты
-        return arr.filter((element, index) => element !== arr[index - 1]);
-    };
+    }
 
-    console.log(uniqueInOrder("AABBCDAAB")); // ['A', 'B', 'C', 'D', 'A', 'B']
+    console.log(findUniq([2, 1, 1, 1, 1, 1, 1]));
 
 </script>
 </body>
