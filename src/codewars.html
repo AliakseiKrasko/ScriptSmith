@@ -6,13 +6,11 @@
 </head>
 <body>
 <script>
-    const stringToNumber = function(str){
-
-        return Number(str);
+    function digitize(n) {
+        return n.toString().split('').reverse().map(Number)
     }
 
-
-    console.log(stringToNumber("23"));
+    console.log(digitize(345));
 
 </script>
 </body>
