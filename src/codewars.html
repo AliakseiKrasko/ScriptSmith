@@ -6,12 +6,13 @@
 </head>
 <body>
 <script>
-    function evenOrOdd(number) {
-        return number % 2 === 0 ? "Even" : "Odd"
+    const stringToNumber = function(str){
+
+        return Number(str);
     }
 
 
-    console.log(evenOrOdd(16));
+    console.log(stringToNumber("23"));
 
 </script>
 </body>
