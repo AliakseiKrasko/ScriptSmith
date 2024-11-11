@@ -6,11 +6,18 @@
 </head>
 <body>
 <script>
-    function strCount(str, letter){
-        return str.split('').reduce((acc, el) => el === letter ? acc + 1 : acc, 0)
+    function countChars(str) {
+        const result = {};  // Создаем объект для хранения количества каждого символа
+
+        for (let char of str) {
+            result[char] = (result[char] || 0) + 1;  // Подсчет количества каждого символа
+        }
+
+        return result;  // Возвращаем объект с подсчитанными значениями
     }
 
-    console.log(strCount("hello", "l"));
+
+    console.log(countChars("aba"));
 
 </script>
 </body>
