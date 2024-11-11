@@ -6,18 +6,12 @@
 </head>
 <body>
 <script>
-    function countChars(str) {
-        const result = {};  // Создаем объект для хранения количества каждого символа
-
-        for (let char of str) {
-            result[char] = (result[char] || 0) + 1;  // Подсчет количества каждого символа
-        }
-
-        return result;  // Возвращаем объект с подсчитанными значениями
+    function evenOrOdd(number) {
+        return number % 2 === 0 ? "Even" : "Odd"
     }
 
 
-    console.log(countChars("aba"));
+    console.log(evenOrOdd(16));
 
 </script>
 </body>
