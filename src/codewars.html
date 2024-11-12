@@ -6,10 +6,14 @@
 </head>
 <body>
 <script>
-    function sumMix(x){
-        return x.reduce((acc, el) => acc + Number(el), 0)
+    function countBy(x, n) {
+        let z = []
+        for (let i = 1; i <= n; i++) {
+            z.push(x * i)
+        }
+        return z;
     }
-    console.log(sumMix([1, "2", 3, 4, 5 ]));
+    console.log(countBy(2, 5));
 
 </script>
 </body>
