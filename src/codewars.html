@@ -6,10 +6,10 @@
 </head>
 <body>
 <script>
-    isUpperCase = function(str) {
-        return str === str.toUpperCase()
+    function sumMix(x){
+        return x.reduce((acc, el) => acc + Number(el), 0)
     }
-    console.log(isUpperCase('CFADSBD'));
+    console.log(sumMix([1, "2", 3, 4, 5 ]));
 
 </script>
 </body>
