@@ -7,11 +7,10 @@
 <body>
 <script>
 
-    function setAlarm(employed, vacation) {
-        return employed && !vacation;
+    function updateLight(current) {
+        return current === "yellow" ? "red" : current === "green" ? "yellow" : "green";
     }
-
-    console.log(setAlarm(false, true));
+    console.log(updateLight("yellow"));
 
 </script>
 </body>
