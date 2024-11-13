@@ -6,12 +6,11 @@
 </head>
 <body>
 <script>
-    function sumTwoSmallestNumbers(numbers) {
-
-        let sortedNumbers = numbers.sort((a, b) => a - b);
-        return sortedNumbers[0] + sortedNumbers[1];
+    function friend(friends) {
+        return friends.filter(el => el.length === 4);
     }
-    console.log(sumTwoSmallestNumbers([2, 4, 65, 34, 5, 34]));
+
+    console.log(friend(["ivan", "sasha", "alex", "anna", "dimych"]));
 
 </script>
 </body>
