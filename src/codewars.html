@@ -6,11 +6,16 @@
 </head>
 <body>
 <script>
-    function friend(friends) {
-        return friends.filter(el => el.length === 4);
+
+    /*filter_list([1,2,'a','b']) == [1,2]
+    filter_list([1,'a','b',0,15]) == [1,0,15]
+    filter_list([1,2,'aasf','1','123',123]) == [1,2,123]*/
+
+    function filter_list(l) {
+        return l.filter(e => typeof e === "number")
     }
 
-    console.log(friend(["ivan", "sasha", "alex", "anna", "dimych"]));
+    console.log(filter_list([1,2,'a','b']));
 
 </script>
 </body>
