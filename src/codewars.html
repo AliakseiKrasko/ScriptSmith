@@ -11,11 +11,11 @@
     filter_list([1,'a','b',0,15]) == [1,0,15]
     filter_list([1,2,'aasf','1','123',123]) == [1,2,123]*/
 
-    function filter_list(l) {
-        return l.filter(e => typeof e === "number")
-    }
+    function smash (words) {
+        return words.join(" ").trim()
+    };
 
-    console.log(filter_list([1,2,'a','b']));
+    console.log(smash(['hello', 'world', 'this', 'is', 'great']));
 
 </script>
 </body>
