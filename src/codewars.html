@@ -7,10 +7,10 @@
 <body>
 <script>
 
-    function getAge(inputString){
-        return Number.parseInt(inputString);
+    function move (position, roll) {
+        return position + roll * 2;
     }
-    console.log(getAge("12"));
+    console.log(move(3, 6));
 
 </script>
 </body>
