@@ -7,10 +7,10 @@
 <body>
 <script>
 
-    function updateLight(current) {
-        return current === "yellow" ? "red" : current === "green" ? "yellow" : "green";
+    function squareSum(numbers){
+       return numbers.reduce((acc, el) => acc + el ** 2, 0)
     }
-    console.log(updateLight("yellow"));
+    console.log(squareSum([1, 2, 3, 4]));
 
 </script>
 </body>
