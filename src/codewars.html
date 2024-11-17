@@ -7,10 +7,32 @@
 <body>
 <script>
 
-    function testEven(n) {
-        return n % 2 === 0
+    const greetings = {
+        english: "Welcome",
+        czech: "Vitejte",
+        danish: "Velkomst",
+        dutch: "Welkom",
+        estonian: "Tere tulemast",
+        finnish: "Tervetuloa",
+        flemish: "Welgekomen",
+        french: "Bienvenue",
+        german: "Willkommen",
+        irish: "Failte",
+        italian: "Benvenuto",
+        latvian: "Gaidits",
+        lithuanian: "Laukiamas",
+        polish: "Witamy",
+        spanish: "Bienvenido" ,
+        swedish: "Valkommen" ,
+        welsh: "Croeso"
     }
-    console.log(testEven(6))
+
+
+    function greet(language) {
+        return greetings[language] || greetings["english"]
+    }
+
+    console.log(greet("polish"))
 
 </script>
 </body>
