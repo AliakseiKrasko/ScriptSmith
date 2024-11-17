@@ -7,11 +7,14 @@
 <body>
 <script>
 
-    function isPalindrome(x) {
-       return x.toLowerCase().split('').reverse().join('')=== x.toLowerCase() ? true : false;
+    function highAndLow(numbers){
+        const numArray = numbers.split(" ")
+        const maxNumber = Math.max(...numArray);
+        const minNumber = Math.min(...numArray)
+        return `${maxNumber} ${minNumber}`
     }
 
-    console.log(isPalindrome('Abba'))
+    console.log(highAndLow('2 4 6 1'))
 
 </script>
 </body>
