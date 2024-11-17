@@ -7,32 +7,11 @@
 <body>
 <script>
 
-    const greetings = {
-        english: "Welcome",
-        czech: "Vitejte",
-        danish: "Velkomst",
-        dutch: "Welkom",
-        estonian: "Tere tulemast",
-        finnish: "Tervetuloa",
-        flemish: "Welgekomen",
-        french: "Bienvenue",
-        german: "Willkommen",
-        irish: "Failte",
-        italian: "Benvenuto",
-        latvian: "Gaidits",
-        lithuanian: "Laukiamas",
-        polish: "Witamy",
-        spanish: "Bienvenido" ,
-        swedish: "Valkommen" ,
-        welsh: "Croeso"
+    function isPalindrome(x) {
+       return x.toLowerCase().split('').reverse().join('')=== x.toLowerCase() ? true : false;
     }
 
-
-    function greet(language) {
-        return greetings[language] || greetings["english"]
-    }
-
-    console.log(greet("polish"))
+    console.log(isPalindrome('Abba'))
 
 </script>
 </body>
