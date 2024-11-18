@@ -7,13 +7,16 @@
 <body>
 <script>
 
-    function isPangram(string){
-        const strNormal = string.toLowerCase().replace(/[^a-z]/g, '')
-        const strSet = new Set(strNormal)
-        return strSet.size === 26
+    function bmi(weight, height) {
+        const bmiValue = weight / (height * height); // Корректная формула BMI
+        return bmiValue > 30 ? "Obese" :
+            bmiValue > 25 ? "Overweight" :
+                bmiValue > 18.5 ? "Normal" :
+                    "Underweight";
     }
 
-    console.log(isPangram('The quick brown fox jumps over the lazy dog'))
+
+    console.log(bmi(97, 187))
 
 </script>
 </body>
