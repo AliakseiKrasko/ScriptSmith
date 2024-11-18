@@ -7,12 +7,13 @@
 <body>
 <script>
 
-    function getGrade (numbers) {
-        // const words = ["hello", "world", "javascript"];
-        // Результат: ["HELLO", "WORLD", "JAVASCRIPT"]
-        return numbers.map(el => el.toUpperCase())
+    function isPangram(string){
+        const strNormal = string.toLowerCase().replace(/[^a-z]/g, '')
+        const strSet = new Set(strNormal)
+        return strSet.size === 26
     }
-    console.log(getGrade(["hello", "world", "javascript"]))
+
+    console.log(isPangram('The quick brown fox jumps over the lazy dog'))
 
 </script>
 </body>
