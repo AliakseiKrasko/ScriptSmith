@@ -8,11 +8,11 @@
 <script>
 
     function getGrade (numbers) {
-        // const numbers = [1, 2, 3, 4, 5];
-        // Результат: [11, 12, 13, 14, 15]
-        return numbers.map(el => el + 10)
+        // const words = ["hello", "world", "javascript"];
+        // Результат: ["HELLO", "WORLD", "JAVASCRIPT"]
+        return numbers.map(el => el.toUpperCase())
     }
-    console.log(getGrade([1, 2, 3, 4, 5]))
+    console.log(getGrade(["hello", "world", "javascript"]))
 
 </script>
 </body>
