@@ -6,12 +6,16 @@
 </head>
 <body>
 <script>
-    function simpleMultiplication(number) {
-        return number % 2 === 0 ? number * 8 : number * 9
+    function rot13(message){
+        const arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        const mesArr = message.split('');
+        for (let i = 0; i <= mesArr.length; i++){
+            mesArr[i] * arr[13]
+        }
     }
 
 
-    console.log(simpleMultiplication(5))
+    console.log(rot13('hello'))
 
 </script>
 </body>
