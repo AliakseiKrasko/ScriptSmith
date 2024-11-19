@@ -6,12 +6,25 @@
 </head>
 <body>
 <script>
-    function rot13(message){
-        const arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-        const mesArr = message.split('');
-        for (let i = 0; i <= mesArr.length; i++){
-            mesArr[i] * arr[13]
-        }
+
+    //function rot13(message) {
+     //   var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    //    var b = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"
+    //    return message.replace(/[a-z]/gi, c => b[a.indexOf(c)])
+    //}
+
+
+    function rot13(message) {
+        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        const rot13Alphabet = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+
+        return message
+            .split('')
+            .map(char => {
+                const index = alphabet.indexOf(char);
+                return index !== -1 ? rot13Alphabet[index] : char; // Если символ есть в алфавите, заменяем, иначе оставляем без изменений
+            })
+            .join('');
     }
 
 
