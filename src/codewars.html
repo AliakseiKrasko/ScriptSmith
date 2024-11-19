@@ -6,29 +6,12 @@
 </head>
 <body>
 <script>
-
-    //function rot13(message) {
-     //   var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    //    var b = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"
-    //    return message.replace(/[a-z]/gi, c => b[a.indexOf(c)])
-    //}
-
-
-    function rot13(message) {
-        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        const rot13Alphabet = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-
-        return message
-            .split('')
-            .map(char => {
-                const index = alphabet.indexOf(char);
-                return index !== -1 ? rot13Alphabet[index] : char; // Если символ есть в алфавите, заменяем, иначе оставляем без изменений
-            })
-            .join('');
+    function findOdd(arr) {
+        return arr.reduce((acc, num) => acc ^ num, 0);
     }
 
 
-    console.log(rot13('hello'))
+    console.log(findOdd([2, 3, 4, 2, 3, 2]))
 
 </script>
 </body>
