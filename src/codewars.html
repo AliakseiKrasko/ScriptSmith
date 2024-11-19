@@ -6,50 +6,12 @@
 </head>
 <body>
 <script>
-    // switchItUp=n=>["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"][n]
-
-    function switchItUp(number) {
-        let rez = "";
-        switch (number) {
-            case 0:
-                rez = "Zero";
-                break;
-            case 1:
-                rez = "One";
-                break;
-            case 2:
-                rez = "Two";
-                break;
-            case 3:
-                rez = "Three";
-                break;
-            case 4:
-                rez = "Four";
-                break;
-            case 5:
-                rez = "Five";
-                break;
-            case 6:
-                rez = "Six";
-                break;
-            case 7:
-                rez = "Seven";
-                break;
-            case 8:
-                rez = "Eight";
-                break;
-            case 9:
-                rez = "Nine";
-                break;
-            default:
-                rez = "Invalid number";
-        }
-
-        return rez;
+    function simpleMultiplication(number) {
+        return number % 2 === 0 ? number * 8 : number * 9
     }
 
 
-    console.log(switchItUp(4))
+    console.log(simpleMultiplication(5))
 
 </script>
 </body>
