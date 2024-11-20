@@ -6,11 +6,11 @@
 </head>
 <body>
 <script>
-    function number(busStops){
-        return busStops.reduce((peopleInBus, [on, off]) => peopleInBus + on - off, 0)
-    }
+    const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+        return distanceToPump <= mpg * fuelLeft
+    };
 
-    console.log(number([[5, 4], [7, 4], [2, 3], [6, 5]]))
+    console.log(zeroFuel(51, 25, 2))
 
 </script>
 </body>
