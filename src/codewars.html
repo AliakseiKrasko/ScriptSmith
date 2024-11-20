@@ -6,11 +6,13 @@
 </head>
 <body>
 <script>
-    const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-        return distanceToPump <= mpg * fuelLeft
-    };
-
-    console.log(zeroFuel(51, 25, 2))
+    function domainName(url) {
+        return url
+            .replace(/^https?:\/\//, '')
+            .replace(/^www\./, '')
+            .split('.')[0];
+    }
+    console.log(domainName("http://github.com/carbonfive/raygun"))
 
 </script>
 </body>
