@@ -6,12 +6,11 @@
 </head>
 <body>
 <script>
-    function findOdd(arr) {
-        return arr.reduce((acc, num) => acc ^ num, 0);
+    function number(busStops){
+        return busStops.reduce((peopleInBus, [on, off]) => peopleInBus + on - off, 0)
     }
 
-
-    console.log(findOdd([2, 3, 4, 2, 3, 2]))
+    console.log(number([[5, 4], [7, 4], [2, 3], [6, 5]]))
 
 </script>
 </body>
