@@ -6,14 +6,11 @@
 </head>
 <body>
 <script>
-    function between(a, b) {
-        rez = [];
-        for(let i = a; i <= b; i++) {
-            rez.push(i)
-        }
-        return rez
+    function invert(array) {
+        let rez = array.map(el => el * -1)
+            return rez;
     }
-    console.log(between(2,5))
+    console.log(invert([1, 2, 3, 4, 5]))
 
 </script>
 </body>
