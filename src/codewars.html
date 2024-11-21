@@ -6,11 +6,12 @@
 </head>
 <body>
 <script>
-    function invert(array) {
-        let rez = array.map(el => el * -1)
-            return rez;
+    function descendingOrder(n){
+        let rez =  n.toString().split('').map(Number)
+        rez.sort((a, b) => b - a)
+        return Number(rez.join(''))
     }
-    console.log(invert([1, 2, 3, 4, 5]))
+    console.log(descendingOrder(1708))
 
 </script>
 </body>
