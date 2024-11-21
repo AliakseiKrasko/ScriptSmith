@@ -6,13 +6,14 @@
 </head>
 <body>
 <script>
-    function domainName(url) {
-        return url
-            .replace(/^https?:\/\//, '')
-            .replace(/^www\./, '')
-            .split('.')[0];
+    function between(a, b) {
+        rez = [];
+        for(let i = a; i <= b; i++) {
+            rez.push(i)
+        }
+        return rez
     }
-    console.log(domainName("http://github.com/carbonfive/raygun"))
+    console.log(between(2,5))
 
 </script>
 </body>
