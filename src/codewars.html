@@ -6,12 +6,18 @@
 </head>
 <body>
 <script>
-    function descendingOrder(n){
-        let rez =  n.toString().split('').map(Number)
-        rez.sort((a, b) => b - a)
-        return Number(rez.join(''))
+    function incrementString(str) {
+        // Найти все числовые последовательности в конце строки const
+        match = str.match(/(\d+)$/); if (match === null) {
+            return str + '1'; } else { // Найти длину числовой последовательности
+            const numLength = match[0].length; // Увеличить числовую последовательность на 1
+            const incrementedNum = String(parseInt(match[0], 10) + 1);
+            // Сохранить начальные нули const
+            paddedNum = incrementedNum.padStart(numLength, '0');
+            // Вернуть строку с увеличенным числом
+            return str.slice(0, -numLength) + paddedNum; }
     }
-    console.log(descendingOrder(1708))
+    console.log(incrementString("str123"))
 
 </script>
 </body>
