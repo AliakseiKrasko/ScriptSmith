@@ -6,18 +6,11 @@
 </head>
 <body>
 <script>
-    function incrementString(str) {
-        // Найти все числовые последовательности в конце строки const
-        match = str.match(/(\d+)$/); if (match === null) {
-            return str + '1'; } else { // Найти длину числовой последовательности
-            const numLength = match[0].length; // Увеличить числовую последовательность на 1
-            const incrementedNum = String(parseInt(match[0], 10) + 1);
-            // Сохранить начальные нули const
-            paddedNum = incrementedNum.padStart(numLength, '0');
-            // Вернуть строку с увеличенным числом
-            return str.slice(0, -numLength) + paddedNum; }
+    function cockroachSpeed(s) {
+        let rez = s * (100000 / 3600)
+        return Math.floor(rez)
     }
-    console.log(incrementString("str123"))
+    console.log(cockroachSpeed(1.08))
 
 </script>
 </body>
