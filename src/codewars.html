@@ -6,13 +6,29 @@
 </head>
 <body>
 <script>
-    function isIsogram(str){
-        str = str.toLowerCase()
-        const rez =  new Set(str)
-        return rez.size === str.length
+    function duplicateCount(str) {
+        // Приводим строку к нижнему регистру
+        str = str.toLowerCase();
 
+        // Создаем объект Map для подсчета символов
+        const charCount = new Map();
+
+        // Подсчитываем количество каждого символа
+        for (const char of str) {
+            charCount.set(char, (charCount.get(char) || 0) + 1);
+        }
+
+        // Считаем количество символов, встречающихся более одного раза
+        let duplicates = 0;
+        for (const count of charCount.values()) {
+            if (count > 1) {
+                duplicates++;
+            }
+        }
+
+        return duplicates;
     }
-    console.log(isIsogram('hdyyer'))
+    console.log(duplicateCount('hdyyer'))
 
 </script>
 </body>
