@@ -6,11 +6,13 @@
 </head>
 <body>
 <script>
-    function cockroachSpeed(s) {
-        let rez = s * (100000 / 3600)
-        return Math.floor(rez)
+    function isIsogram(str){
+        str = str.toLowerCase()
+        const rez =  new Set(str)
+        return rez.size === str.length
+
     }
-    console.log(cockroachSpeed(1.08))
+    console.log(isIsogram('hdyyer'))
 
 </script>
 </body>
