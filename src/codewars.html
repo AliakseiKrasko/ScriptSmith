@@ -6,12 +6,10 @@
 </head>
 <body>
 <script>
-    function abbrevName(name){
-
-        const [firstName, lastName] = name.split(' ')
-        return `${firstName[0].toUpperCase()}.${lastName[0].toUpperCase()}`
+    function repeatStr (n, s) {
+        return s.repeat(n);
     }
-    console.log(abbrevName('Sam Krasko'))
+    console.log(repeatStr(5, 'Hello'))
 
 </script>
 </body>
