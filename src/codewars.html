@@ -6,10 +6,20 @@
 </head>
 <body>
 <script>
-    function repeatStr (n, s) {
-        return s.repeat(n);
+    function duplicateEncode(word){
+        const textSmall = word.toLowerCase()
+        const count = {}
+        for (const char of textSmall) {
+            count[char] = ((count[char] || 0) + 1)
+        }
+
+        return textSmall
+            .split('')
+            .map(char => count[char] > 1 ? ')' : '(')
+            .join('');
     }
-    console.log(repeatStr(5, 'Hello'))
+
+    console.log(duplicateEncode('Hello'))
 
 </script>
 </body>
