@@ -6,14 +6,15 @@
 </head>
 <body>
 <script>
-    const areaOrPerimeter = function(l , w) {
-        if(l === w) {
-            return l * w
+    function oddOrEven(array) {
+       const letS = array.reduce((acc, el) => acc + el, 0)
+        if ( letS % 2 === 0) {
+            return "even"
         } else {
-            return 2 * (l + w)
+            return "odd"
         }
-    };
-    console.log(areaOrPerimeter(3, 5))
+    }
+    console.log(oddOrEven([0, -1, -5]))
 
 </script>
 </body>
