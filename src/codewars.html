@@ -6,15 +6,11 @@
 </head>
 <body>
 <script>
-    function getRealFloor(n) {
-        if (n < 13) {
-            return n - 1
-        } else if (n > 13) {
-            return n - 2
-        }
-        //return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+    function howMuchILoveYou(nbPetals) {
+        const arr = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
+        return arr[(nbPetals - 1) % arr.length]
     }
-    console.log(getRealFloor(14))
+    console.log(howMuchILoveYou(13))
 
 </script>
 </body>
