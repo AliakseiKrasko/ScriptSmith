@@ -6,20 +6,12 @@
 </head>
 <body>
 <script>
-    function duplicateEncode(word){
-        const textSmall = word.toLowerCase()
-        const count = {}
-        for (const char of textSmall) {
-            count[char] = ((count[char] || 0) + 1)
-        }
+    function lovefunc(flower1, flower2){
+        return flower1 % 2 !== flower2 % 2
 
-        return textSmall
-            .split('')
-            .map(char => count[char] > 1 ? ')' : '(')
-            .join('');
     }
 
-    console.log(duplicateEncode('Hello'))
+    console.log(lovefunc(3, 4))
 
 </script>
 </body>
