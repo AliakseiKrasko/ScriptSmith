@@ -6,11 +6,14 @@
 </head>
 <body>
 <script>
-    function howMuchILoveYou(nbPetals) {
-        const arr = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
-        return arr[(nbPetals - 1) % arr.length]
-    }
-    console.log(howMuchILoveYou(13))
+    const areaOrPerimeter = function(l , w) {
+        if(l === w) {
+            return l * w
+        } else {
+            return 2 * (l + w)
+        }
+    };
+    console.log(areaOrPerimeter(3, 5))
 
 </script>
 </body>
