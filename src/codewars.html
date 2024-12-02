@@ -6,10 +6,15 @@
 </head>
 <body>
 <script>
-    function makeUpperCase(str) {
-        return str.toUpperCase()
+    function getRealFloor(n) {
+        if (n < 13) {
+            return n - 1
+        } else if (n > 13) {
+            return n - 2
+        }
+        //return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
     }
-    console.log(makeUpperCase('jadhvjskhdj'))
+    console.log(getRealFloor(14))
 
 </script>
 </body>
