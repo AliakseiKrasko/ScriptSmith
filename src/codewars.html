@@ -6,11 +6,13 @@
 </head>
 <body>
 <script>
-    function paperwork(n, m) {
-        return n > 0 && m > 0 ? n * m : 0
+    const arithmetic = (a, b, operator) => {
+        return  (
+            operator === "add" ? a + b : operator === "subtract" ? a - b : operator === "multiply" ? a * b : a / b
+        )
     }
 
-    console.log(paperwork(5, -5))
+    console.log(arithmetic(2, 3, "add"))
 
 </script>
 </body>
