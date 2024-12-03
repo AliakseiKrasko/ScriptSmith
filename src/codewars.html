@@ -6,13 +6,11 @@
 </head>
 <body>
 <script>
-    const arithmetic = (a, b, operator) => {
-        return  (
-            operator === "add" ? a + b : operator === "subtract" ? a - b : operator === "multiply" ? a * b : a / b
-        )
+    function sumStr(a,b) {
+        return String(Number(a) + Number(b))
     }
 
-    console.log(arithmetic(2, 3, "add"))
+    console.log(sumStr("2", "5"))
 
 </script>
 </body>
