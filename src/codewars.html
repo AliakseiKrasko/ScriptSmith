@@ -6,20 +6,11 @@
 </head>
 <body>
 <script>
-    var humanYearsCatYearsDogYears = function(humanYears) {
-        let catYears = 15
-        let dogYears = 15
-        if (humanYears === 2){
-            catYears += 9;
-            dogYears += 9;
-        }
-        if (humanYears > 2) {
-            catYears += (humanYears - 2) * 4 + 9;
-            dogYears += (humanYears - 2) * 5 + 9;
-        }
-        return [humanYears, catYears, dogYears];
+    function paperwork(n, m) {
+        return n > 0 && m > 0 ? n * m : 0
     }
-    console.log(humanYearsCatYearsDogYears(5))
+
+    console.log(paperwork(5, -5))
 
 </script>
 </body>
