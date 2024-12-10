@@ -6,11 +6,14 @@
 </head>
 <body>
 <script>
-    function sayHello(name) {
-        return 'Hello, Mr.' + name
+    function gimme(triplet) {
+        const arrSort = [...triplet].sort((a, b) => a - b)
+        const indArr = arrSort[1]
+        return triplet.indexOf(indArr)
+
     }
 
-    console.log(sayHello("Alex"))
+    console.log(gimme([2, 1, 5]))
 
 </script>
 </body>
