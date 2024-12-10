@@ -6,14 +6,13 @@
 </head>
 <body>
 <script>
-    function gimme(triplet) {
-        const arrSort = [...triplet].sort((a, b) => a - b)
-        const indArr = arrSort[1]
-        return triplet.indexOf(indArr)
-
+    function missingNo(nums) {
+        const arr = nums.reduce((acc, el) => acc + el, 0)
+        const fullArr = 10*(10+1)/2
+        return fullArr - arr
     }
 
-    console.log(gimme([2, 1, 5]))
+    console.log(missingNo([2, 1, 5, 7, 8, 4, 6, 9, 10]))
 
 </script>
 </body>
