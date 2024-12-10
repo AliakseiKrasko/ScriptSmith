@@ -6,13 +6,13 @@
 </head>
 <body>
 <script>
-    function missingNo(nums) {
-        const arr = nums.reduce((acc, el) => acc + el, 0)
-        const fullArr = 10*(10+1)/2
-        return fullArr - arr
+    function largest(n, array) {
+        const sortArr = [...array].sort((a, b) => a - b)
+        return sortArr.slice(sortArr.length - n)
+
     }
 
-    console.log(missingNo([2, 1, 5, 7, 8, 4, 6, 9, 10]))
+    console.log(largest(2, [2, 1, 5, 7, 8, 4, 6, 9, 10]))
 
 </script>
 </body>
