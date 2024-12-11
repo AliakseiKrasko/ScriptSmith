@@ -6,13 +6,15 @@
 </head>
 <body>
 <script>
-    function largest(n, array) {
-        const sortArr = [...array].sort((a, b) => a - b)
-        return sortArr.slice(sortArr.length - n)
-
+    function reverseBits (n) {
+        const num = n.toString(2)
+        console.log(num)
+        const rez = num.toString().split("").reverse().join("");
+        console.log(rez)
+        return parseInt(rez, 2)
     }
 
-    console.log(largest(2, [2, 1, 5, 7, 8, 4, 6, 9, 10]))
+    console.log(reverseBits(417))
 
 </script>
 </body>
