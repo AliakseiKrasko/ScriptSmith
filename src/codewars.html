@@ -6,34 +6,19 @@
 </head>
 <body>
 <script>
-    function dotCalculator (equation) {
-        const [leftDots, operator, rightDots] = equation.split(" ");
-        const leftLength = leftDots.length;
-        const leftRigth = rightDots.length;
+    function findEvenIndex(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            const leftSum = arr.slice(0, i).reduce((acc, val) => acc + val, 0)
+            const rightSum = arr.slice(i + 1).reduce((acc, val) => acc + val, 0)
 
-        let rez;
-        switch (operator) {
-            case '+':
-                rez = leftLength + leftRigth;
-                break;
-            case '-':
-                rez = leftLength - leftRigth;
-                break;
-            case '*':
-                rez = leftLength * leftRigth;
-                break;
-            case '//':
-                rez = Math.floor(leftLength / leftRigth);
-                break;
-            default:
-                throw new Error("Неизвестный оператор");
-
+            if (leftSum === rightSum) {
+                return i
+            }
         }
-
-        return '.'.repeat(rez);
+        return -1
     }
 
-    console.log(dotCalculator(..... + ..........))
+    console.log(findEvenIndex([2, 2, 3, 4, 3, 2, 1]))
 
 </script>
 </body>
