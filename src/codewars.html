@@ -6,12 +6,20 @@
 </head>
 <body>
 <script>
-    const binaryArrayToNumber = arr => {
-        const res = arr.join("")
-        return parseInt(res, 2);
-    };
+    function expandedForm(num) {
+        return num
+            .toString() // Преобразуем число в строку
+            .split('')  // Разбиваем строку на массив цифр
+            .map((digit, index, arr) => {
+                // Умножаем цифру на 10^(длина массива - текущий индекс - 1)
+                const placeValue = digit * Math.pow(10, arr.length - index - 1);
+                return placeValue;
+            })
+            .filter(value => value !== 0) // Убираем все нули
+            .join(' + '); // Соединяем оставшиеся числа через " + "
+    }
 
-    console.log(binaryArrayToNumber([1, 0, 1, 1]))
+    console.log(expandedForm(70304))
 
 </script>
 </body>
