@@ -6,17 +6,10 @@
 </head>
 <body>
 <script>
-    function multi(arr) {
-        return arr.reduce((acc, el) => acc * el, 1);
+    function reverseWords(str) {
+        return str.split('').reverse().join('').split(' ').reverse().join(' ')
     }
-    function add(arr) {
-        return arr.reduce((acc, el) => acc + el, 0);
-    }
-    function reverse(str) {
-        return str.split('').reverse().join('')
-
-    }
-    console.log(multi([2, 3, 4, 2]))
+    console.log(reverseWords('petja sacha'))
 
 </script>
 </body>
