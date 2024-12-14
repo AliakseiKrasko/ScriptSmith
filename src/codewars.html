@@ -6,20 +6,17 @@
 </head>
 <body>
 <script>
-    function expandedForm(num) {
-        return num
-            .toString() // Преобразуем число в строку
-            .split('')  // Разбиваем строку на массив цифр
-            .map((digit, index, arr) => {
-                // Умножаем цифру на 10^(длина массива - текущий индекс - 1)
-                const placeValue = digit * Math.pow(10, arr.length - index - 1);
-                return placeValue;
-            })
-            .filter(value => value !== 0) // Убираем все нули
-            .join(' + '); // Соединяем оставшиеся числа через " + "
+    function multi(arr) {
+        return arr.reduce((acc, el) => acc * el, 1);
     }
+    function add(arr) {
+        return arr.reduce((acc, el) => acc + el, 0);
+    }
+    function reverse(str) {
+        return str.split('').reverse().join('')
 
-    console.log(expandedForm(70304))
+    }
+    console.log(multi([2, 3, 4, 2]))
 
 </script>
 </body>
