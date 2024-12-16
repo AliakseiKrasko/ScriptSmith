@@ -6,8 +6,18 @@
 </head>
 <body>
 <script>
-    var summation = n => n * (n + 1) / 2
-    console.log(summation(8))
+    function getLargerNumbers(a, b) {
+        c = []
+        for(let i = 0; i <a.length; i++) {
+            if(a[i] > b[i]) {
+               c.push(a[i])
+            } else {
+                c.push(b[i])
+            }
+        }
+        return c
+    }
+    console.log(getLargerNumbers([13, 64, 15, 17, 88], [23, 14, 53, 17, 80]))
 
 </script>
 </body>
