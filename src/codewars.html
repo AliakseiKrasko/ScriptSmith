@@ -6,34 +6,11 @@
 </head>
 <body>
 <script>
-    class Kata {
-        static game(A, B) {
-            if (A < 1 || B < 1) {
-                return "Non-drinkers can't play"
-            }
-            let mikeTotal = 0;
-            let joeTotal = 0;
-            let i = 1;
-            while (true) {
-                if (i % 2 !== 0) {
-                    if (mikeTotal + 1 > A) {
-                        return Joe
-                    }
-                    mikeTotal += 1
-                } else {
-                    if (joeTotal + 1 > B) {
-                        return Mike
-                    }
-                    joeTotal += 1
-
-                }
-                i++
-            }
-
-        }
+    function combat(health, damage) {
+        return health < damage ? 0 : health - damage
     }
 
-    console.log(Kata(13,34))
+    console.log(combat(13,12))
 
 </script>
 </body>
