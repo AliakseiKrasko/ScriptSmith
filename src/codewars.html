@@ -6,15 +6,13 @@
 </head>
 <body>
 <script>
-    function combat(test, original) {
-        const newTest = test.toLowerCase().split('').sort().join('')
-        console.log(newTest)
-        const newOriginal = original.toLowerCase().split('').sort().join('')
-        console.log(newOriginal)
-        return newTest === newOriginal
+    function combat(array) {
+        return array.map((el, index) => {
+            return `${index + 1}: ${el}`
+        })
     }
 
-    console.log(combat("foefet","toffee"))
+    console.log(combat(["sef", "efa", "rwg"]))
 
 </script>
 </body>
