@@ -6,11 +6,15 @@
 </head>
 <body>
 <script>
-    function combat(health, damage) {
-        return health < damage ? 0 : health - damage
+    function combat(test, original) {
+        const newTest = test.toLowerCase().split('').sort().join('')
+        console.log(newTest)
+        const newOriginal = original.toLowerCase().split('').sort().join('')
+        console.log(newOriginal)
+        return newTest === newOriginal
     }
 
-    console.log(combat(13,12))
+    console.log(combat("foefet","toffee"))
 
 </script>
 </body>
