@@ -6,13 +6,35 @@
 </head>
 <body>
 <script>
-    function combat(array) {
-        return array.map((el, index) => {
-            return `${index + 1}: ${el}`
-        })
+    function sayMeOperations(str) {
+        const strArr = str.split(' ').map(Number);
+        const res = [];
+
+        for (let i = 2; i < strArr.length; i++) {
+            const a = strArr[i - 2];
+            const b = strArr[i - 1];
+            const c = strArr[i];
+
+            if(a + b === c) {
+               res.push("addition")
+            } else if(a - b === c){
+                res.push("subtraction")
+            } else if(a * b === c){
+                res.push("multiplication")
+            } else {
+                if(b !== 0 && Math.trunc(a / b) === c) {
+                    res.push("division")
+                } else {
+                    throw new Error(`Не удалось определить операцию для чисел: ${a}, ${b}, ${c}`);
+                }
+
+            }
+
+        } return res.join(', ')
+
     }
 
-    console.log(combat(["sef", "efa", "rwg"]))
+    console.log(sayMeOperations("9 4 5 20 25"))
 
 </script>
 </body>
