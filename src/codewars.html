@@ -6,35 +6,12 @@
 </head>
 <body>
 <script>
-    function sayMeOperations(str) {
-        const strArr = str.split(' ').map(Number);
-        const res = [];
+    function distinct(a) {
 
-        for (let i = 2; i < strArr.length; i++) {
-            const a = strArr[i - 2];
-            const b = strArr[i - 1];
-            const c = strArr[i];
-
-            if(a + b === c) {
-               res.push("addition")
-            } else if(a - b === c){
-                res.push("subtraction")
-            } else if(a * b === c){
-                res.push("multiplication")
-            } else {
-                if(b !== 0 && Math.trunc(a / b) === c) {
-                    res.push("division")
-                } else {
-                    throw new Error(`Не удалось определить операцию для чисел: ${a}, ${b}, ${c}`);
-                }
-
-            }
-
-        } return res.join(', ')
-
+        return [...new Set(a)];
     }
 
-    console.log(sayMeOperations("9 4 5 20 25"))
+    console.log(distinct([1, 1, 3, 2, 2, 4, 2]))
 
 </script>
 </body>
