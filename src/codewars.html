@@ -6,24 +6,14 @@
 </head>
 <body>
 <script>
-    function wave(str) {
-        const strArr = str.trim().toLowerCase().split(''); // Преобразуем строку в массив
-        let newArr = [];
-
-        for (let i = 0; i < strArr.length; i++) {
-            if (strArr[i] === ' ') continue; // Пропускаем пробелы
-            // Создаём волну: первая часть + текущая буква в верхнем регистре + остаток
-            newArr.push(
-                strArr
-                    .map((char, index) => (index === i ? char.toUpperCase() : char))
-                    .join('')
-            );
-        }
-
-        return newArr; // Возвращаем массив "волн"
+    function minValue(values){
+        const res = new Set(values)
+        return Number([...res].sort((a, b) => a - b).join(''))
     }
 
-    console.log(wave('Hello'))
+
+
+    console.log(minValue([1, 9, 3, 1, 7, 4, 6, 6, 7]))
 
 </script>
 </body>
