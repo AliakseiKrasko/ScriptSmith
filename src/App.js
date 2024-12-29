@@ -2,7 +2,7 @@ import {NewComponent} from "./components/NewComponent.tsx";
 import {ListComponent} from "./components/ListComponent.tsx";
 import {Button} from "./components/Button.tsx";
 import {useState} from "react";
-import {OnOf} from "./components/OnOf/OnOf.tsx";
+/*import {OnOf} from "./components/OnOf/OnOf.tsx";*/
 
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
             <h1>{count}</h1>
             <button onClick={buttonCounter}>+</button>
             <button onClick={buttonReset}>0</button>
-            <OnOf on={true}/>
+            {/*<OnOf on={true}/>*/}
         </div>
     );
 }
