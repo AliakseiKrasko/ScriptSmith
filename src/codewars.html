@@ -7,20 +7,18 @@
 <body>
 <script>
 
-    let car = 'audi'
-    const functionCar = () => {
-        function func(){
-            let model = '123'
-            console.log(`car = ${car} model = ${model}`)
-             car = 'opel'
-        }
-        func()
-    }
 
-  functionCar()
-    console.log(car)
- car = 'bmw'
-    functionCar()
+    const counterCreater = () => {
+        let count = 0;
+        return () => {
+            console.log(++count)
+        }
+    }
+    const counter = counterCreater()
+    counter()
+    counter()
+    count = 90
+    counter()
 
 </script>
 </body>
