@@ -1,7 +1,8 @@
-import {NewComponent} from "./components/NewComponent.tsx";
-import {ListComponent} from "./components/ListComponent.tsx";
-import {Button} from "./components/Button.tsx";
+import {NewComponent} from "./components/NewComponent";
+import {ListComponent} from "./components/ListComponent";
+import {Button} from "./components/Button";
 import {useState} from "react";
+import {TableCounter} from "./components/TableCounter";
 /*import {OnOf} from "./components/OnOf/OnOf.tsx";*/
 
 
@@ -59,7 +60,7 @@ function App() {
 
     return (
         <div className="App">
-            <NewComponent topCars={topCars}/>
+           {/* <NewComponent topCars={topCars}/>
             <ListComponent students={students}/>
             <Button name={'MyButton1'} callBack={()=>buttomFoo('Hello', 21)}/>
             <Button name={'MyButton2'} callBack={()=>buttomFoo2('HiHiHi', 41)}/>
@@ -67,7 +68,8 @@ function App() {
             <h1>{count}</h1>
             <button onClick={buttonCounter}>+</button>
             <button onClick={buttonReset}>0</button>
-            {/*<OnOf on={true}/>*/}
+            <TableCounter />*/}
+            hello
         </div>
     );
 }

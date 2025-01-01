@@ -6,14 +6,21 @@
 </head>
 <body>
 <script>
-    function minValue(values){
-        const res = new Set(values)
-        return Number([...res].sort((a, b) => a - b).join(''))
+
+    let car = 'audi'
+    const functionCar = () => {
+        function func(){
+            let model = '123'
+            console.log(`car = ${car} model = ${model}`)
+             car = 'opel'
+        }
+        func()
     }
 
-
-
-    console.log(minValue([1, 9, 3, 1, 7, 4, 6, 6, 7]))
+  functionCar()
+    console.log(car)
+ car = 'bmw'
+    functionCar()
 
 </script>
 </body>
