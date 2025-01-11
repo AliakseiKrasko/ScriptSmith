@@ -6,12 +6,15 @@
 </head>
 <body>
 <script>
-
+//TODO: практика решения задач по нативным javascript
     const arr = function (word) {
-
-        return word.split('').map((el, index)=>
-            el === el.toUpperCase() && el !== el.toLowerCase() ? index : null).filter(index => index !== null)
-
+        const newArr = []
+        word.split('').forEach((el, index)=> {
+            if (el === el.toUpperCase() && el !== el.toLowerCase()) {
+                newArr.push(index)
+            }
+        });
+        return newArr
     };
 
 
