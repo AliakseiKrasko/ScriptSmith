@@ -6,19 +6,19 @@
 </head>
 <body>
 <script>
-//TODO: практика решения задач по нативным javascript
-    const arr = function (word) {
-        const newArr = []
-        word.split('').forEach((el, index)=> {
-            if (el === el.toUpperCase() && el !== el.toLowerCase()) {
-                newArr.push(index)
-            }
-        });
-        return newArr
-    };
+    //TODO: практика решения задач по нативным javascript
+    let isSquare = (n) => {
+        if( n < 0) {
+            return false
+        }
+        const num = Math.sqrt(n)
+        return Number.isInteger(num);
+
+    }
 
 
-    console.log(arr("HeLLo"));
+    console.log(isSquare(4))
+
 
 </script>
 </body>
