@@ -7,12 +7,15 @@
 <body>
 <script>
 
-    function reverse(string){
-        return string.trim().split(' ').reverse().join(' ')
-    }
+    const arr = function (word) {
+
+        return word.split('').map((el, index)=>
+            el === el.toUpperCase() && el !== el.toLowerCase() ? index : null).filter(index => index !== null)
+
+    };
 
 
-    console.log(reverse("Hello world!"));
+    console.log(arr("HeLLo"));
 
 </script>
 </body>
