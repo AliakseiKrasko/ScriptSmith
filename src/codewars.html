@@ -7,17 +7,25 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    let isSquare = (n) => {
-        if( n < 0) {
-            return false
+    function findMissingLetter(array) {
+        for (let i = 0; i < array.length - 1; i++) {
+            // 1. Получаем код текущей буквы
+            const currentCharCode = array[i].charCodeAt(0);
+            console.log(currentCharCode)
+            // 2. Получаем код следующей буквы
+            const nextCharCode = array[i + 1].charCodeAt(0);
+            console.log(nextCharCode)
+            // 3. Проверяем разницу между ними
+            if (nextCharCode - currentCharCode !== 1) {
+                // Если разница больше 1, возвращаем пропущенную букву
+                return String.fromCharCode(currentCharCode + 1);
+            }
         }
-        const num = Math.sqrt(n)
-        return Number.isInteger(num);
-
     }
 
 
-    console.log(isSquare(4))
+    console.log(findMissingLetter(['a','b','c','d','f']))
+
 
 
 </script>
