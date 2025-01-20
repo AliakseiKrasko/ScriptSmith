@@ -7,24 +7,17 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function findMissingLetter(array) {
-        for (let i = 0; i < array.length - 1; i++) {
-            // 1. Получаем код текущей буквы
-            const currentCharCode = array[i].charCodeAt(0);
-            console.log(currentCharCode)
-            // 2. Получаем код следующей буквы
-            const nextCharCode = array[i + 1].charCodeAt(0);
-            console.log(nextCharCode)
-            // 3. Проверяем разницу между ними
-            if (nextCharCode - currentCharCode !== 1) {
-                // Если разница больше 1, возвращаем пропущенную букву
-                return String.fromCharCode(currentCharCode + 1);
-            }
-        }
+    function evenLast(numbers) {
+       if(numbers.length === 0) return 0;
+       const sum = numbers
+           .filter(index => index % 2 === 0)
+           .reduce((acc, el) => acc + el, 0)
+        console.log(sum)
+
+        return sum * numbers[numbers.length - 1]
     }
 
-
-    console.log(findMissingLetter(['a','b','c','d','f']))
+    console.log(evenLast([2, 3, 4, 5]))
 
 
 
