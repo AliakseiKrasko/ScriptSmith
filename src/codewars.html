@@ -7,29 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function strong(n) {
-        const arr = n.toString().split('').map(Number);
-
-        const factorial = (num) => {
-            let res = 1;
-            for (let i = 1; i <= num; i++) {
-                res *= i;
-            }
-            return res;
-        };
-
-        const sumOfFactorials = arr.map(factorial).reduce((sum, value) => sum + value, 0);
-
-        return sumOfFactorials === n ? "STRONG!!!!" : "Not Strong !!";
+    function reverseWords(str) {
+        return str.split(' ').reverse().join(' ')
     }
 
-    console.log(strong(145)); // "STRONG!!!!"
-    console.log(strong(123)); // "Not Strong !!"
-
-
-    // console.log(strong(145))
-
-
+    console.log(reverseWords("jks asjkf aksjfk kasjf"))
 
 </script>
 </body>
