@@ -7,19 +7,26 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function order(words){
-        const arr = words.split(' ')
-            .sort((a, b) => {
-                const numA = a.match(/\d/)
-                const numB = b.match(/\d/)
-                return numA - numB
-            })
+    function tripledouble(num1, num2) {
+        const tripleRegex = /(.)\1\1/g; // Регулярка для поиска всех троек
+        const matches = num1.toString().matchAll(tripleRegex); // Находим все тройки
+        const num2Str = num2.toString();
 
-        return arr.join(' ')
+        for (const match of matches) {
+            const digit = match[1]; // Цифра из тройки
+            const doubleRegex = new RegExp(`${digit}{2}`); // Регулярка для двойки
+            if (doubleRegex.test(num2Str)) {
+                return 1; // Если тройка и двойка совпадают, возвращаем 1
+            }
+        }
+
+        return 0; // Если ни одна тройка не имеет соответствующей двойки
     }
 
 
-    console.log(order("is2 Thi1s T4est 3a"))
+
+
+    console.log(tripledouble(451999277, 41177722899))
 
 </script>
 </body>
