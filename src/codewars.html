@@ -7,14 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function isTriangle(a,b,c)
-    {
-        if (a <= 0 || b <= 0 || c <= 0) return false;
-        return a + b > c && a + c > b && c + b > a
+    function arrayPlusArray(arr1, arr2) {
+        return [...arr1, ...arr2].reduce((acc, el) => acc + el, 0)
     }
 
-
-    console.log(isTriangle(2, 3, 5))
+    console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]))
 
 </script>
 </body>
