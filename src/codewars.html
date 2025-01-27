@@ -7,12 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function solution(str) {
-        return (str + "_").match(/.{2}/g) || []
+    function isTriangle(a,b,c)
+    {
+        if (a <= 0 || b <= 0 || c <= 0) return false;
+        return a + b > c && a + c > b && c + b > a
     }
 
 
-    console.log(solution('abcdef'))
+    console.log(isTriangle(2, 3, 5))
 
 </script>
 </body>
