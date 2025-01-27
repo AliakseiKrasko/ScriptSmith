@@ -7,26 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function tripledouble(num1, num2) {
-        const tripleRegex = /(.)\1\1/g; // Регулярка для поиска всех троек
-        const matches = num1.toString().matchAll(tripleRegex); // Находим все тройки
-        const num2Str = num2.toString();
-
-        for (const match of matches) {
-            const digit = match[1]; // Цифра из тройки
-            const doubleRegex = new RegExp(`${digit}{2}`); // Регулярка для двойки
-            if (doubleRegex.test(num2Str)) {
-                return 1; // Если тройка и двойка совпадают, возвращаем 1
-            }
-        }
-
-        return 0; // Если ни одна тройка не имеет соответствующей двойки
+    function solution(str) {
+        return (str + "_").match(/.{2}/g) || []
     }
 
 
-
-
-    console.log(tripledouble(451999277, 41177722899))
+    console.log(solution('abcdef'))
 
 </script>
 </body>
