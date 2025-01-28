@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function arrayPlusArray(arr1, arr2) {
-        return [...arr1, ...arr2].reduce((acc, el) => acc + el, 0)
+    function solve(arr) {
+        return arr.find(e => !arr.includes(-e));
     }
 
-    console.log(arrayPlusArray([1, 2, 3], [4, 5, 6]))
+    console.log(solve([1, -1, 2, -2, 3]))
 
 </script>
 </body>
