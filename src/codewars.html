@@ -7,18 +7,10 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function decodeMorse(morseCode) {
-        return morseCode
-            .trim() // Убираем лишние пробелы в начале и конце
-            .split("   ") // Разделяем слова
-            .map(word =>
-                word.split(" ") // Разделяем буквы
-                    .map(letter => MORSE_CODE[letter]) // Декодируем буквы
-                    .join("") // Собираем слово
-            )
-            .join(" "); // Собираем всю фразу
+    function opposite(number) {
+        return number - (number * 2)
     }
-    console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
+    console.log(opposite(-34))
 
 </script>
 </body>
