@@ -7,13 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function sortArray(array) {
-        const oddNumbers = array.filter(el => el % 2 !== 0).sort((a, b) => a - b)
-        let index = 0
-        return array.map(num => num % 2 !== 0 ? oddNumbers[index++] : num)
-
+    function decodeMorse(morseCode) {
+        return morseCode
+            .trim() // Убираем лишние пробелы в начале и конце
+            .split("   ") // Разделяем слова
+            .map(word =>
+                word.split(" ") // Разделяем буквы
+                    .map(letter => MORSE_CODE[letter]) // Декодируем буквы
+                    .join("") // Собираем слово
+            )
+            .join(" "); // Собираем всю фразу
     }
-    console.log(sortArray([5, 8, 6, 3, 4]))
+    console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
 
 </script>
 </body>
