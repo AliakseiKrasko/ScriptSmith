@@ -7,22 +7,10 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function divisors(integer) {
-        let newArr = [];
-
-        // Проверяем делители от 2 до integer - 1 (исключаем само число)
-        for (let i = 2; i < integer; i++) {
-            if (integer % i === 0) {
-                newArr.push(i);
-            }
-        }
-
-        // Если массив пуст, значит число простое
-        return newArr.length ? newArr : `${integer} is prime`;
-
+    function getAverage(marks) {
+        return Math.floor(marks.reduce((acc, el) => acc + el, 0) / marks.length);
     }
-
-    console.log(divisors(12))
+    console.log(getAverage([2, 4, 6, 8]))
 
 </script>
 </body>
