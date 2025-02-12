@@ -7,11 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function doubleInteger(i) {
+    String.prototype.camelCase = function() {
+        return this.split(' ')
+            .filter(word => word.length > 0) // Убираем возможные пустые строки
+            .map(word => word[0].toUpperCase() + word.slice(1))
+            .join('');
+    };
 
-        return i * 2;
-    }
-    console.log(doubleInteger(8))
+    console.log("hello case".camelCase());
 
 </script>
 </body>
