@@ -7,11 +7,16 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function sumDigits(number) {
-        return Math.abs(number).toString().split('').reduce((acc, el) => acc + Number(el), 0)
+    function chromosomeCheck(sperm) {
+        if (sperm === 'X') {
+            return "Congratulations! You're going to have a daughter."
+        } else if (sperm === 'Y') {
+            return "Congratulations! You're going to have a son."
+        }
+        return "Invalid input.";
     }
 
-    console.log(sumDigits(99))
+    console.log(chromosomeCheck('X'))
 </script>
 </body>
 </html>
