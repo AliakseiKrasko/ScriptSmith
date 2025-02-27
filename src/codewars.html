@@ -7,14 +7,50 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    String.prototype.camelCase = function() {
-        return this.split(' ')
-            .filter(word => word.length > 0) // Убираем возможные пустые строки
-            .map(word => word[0].toUpperCase() + word.slice(1))
-            .join('');
-    };
+    class Car {
+        constructor(brand, speed) {
+            this.brand = brand
+            this.speed = speed
+        }
 
-    console.log("hello case".camelCase());
+        startEngine() {
+            console.log(`Start ${this.brand}`)
+        }
+
+        static compareCars(car1, car2) {
+            car1.speed > car2.speed
+                ? console.log(`${car1.brand} faster that ${car2.brand}`)
+                : console.log(`${car2.brand} faster that ${car1.brand}`)
+
+        }
+    }
+
+    car1 = new Car('bmw', 200)
+    car2 = new Car('kia', 220)
+
+    class SuperCar extends Car {
+        constructor(brand, speed, canfly) {
+            super(brand, speed)
+            this.canfly = canfly
+        }
+
+        showAbility() {
+            console.log(this.canfly ? `${this.brand} can fly` : `${this.brand} can't fly`)
+        }
+    }
+
+    function CarFunc(brend, speed) {
+        console.log(brend, speed)
+    }
+
+    CarFunc('ford', 400)
+
+    function CarFunc2(brand, speed, color) {
+        CarFunc.call(this, brand, speed)
+        this.color = color
+        console.log(brand, speed, color)
+    }
+    CarFunc2('Hundai', 190, 'red')
 
 </script>
 </body>
