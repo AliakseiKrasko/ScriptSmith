@@ -13,10 +13,9 @@
 
     let a = {name: "Alex"}
     let b = {name: "Petja"}
-    const hes = (age) => foo.call(a, age, 'Minsk')
-    const hes2 = foo.bind(b)
-    hes(32)
-    hes2(40, 'Volkowysk')
+
+    foo.call(a, 32, 'Minsk')
+    foo.call(40, 40, 'Volkowysk')
 </script>
 </body>
 </html>
