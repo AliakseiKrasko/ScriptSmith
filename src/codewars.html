@@ -7,16 +7,16 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function fixText(text) {
-        return text
-            .replace(/5/g, 'S')  // Заменяем все 5 на S
-            .replace(/0/g, 'O')  // Заменяем все 0 на O
-            .replace(/1/g, 'I'); // Заменяем все 1 на I
+    function foo() {
+        console.log(this.name);
     }
 
-    // Пример использования:
-    console.log(fixText("5I 5O 0")); // S I O
-    console.log(fixText("Th1s 1s 5ample text 0f OCR error."))
+    let a = {name: "Alex"}
+    let b = {name: "Petja"}
+    const hes = foo.bind(a)
+    const hes2 = foo.bind(b)
+    hes()
+    hes2()
 </script>
 </body>
 </html>
