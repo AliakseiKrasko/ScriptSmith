@@ -14,8 +14,8 @@
     let a = {name: "Alex"}
     let b = {name: "Petja"}
 
-    foo.call(a, 32, 'Minsk')
-    foo.call(40, 40, 'Volkowysk')
+    foo.apply(a, [32, 'Minsk'])
+    foo.apply(40, [40, 'Volkowysk'])
 </script>
 </body>
 </html>
