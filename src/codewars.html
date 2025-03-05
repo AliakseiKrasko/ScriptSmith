@@ -7,16 +7,16 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function foo() {
-        console.log(this.name);
+    function foo(age, city) {
+        console.log(`${this.name} live ${city} and hi ${age} yar`);
     }
 
     let a = {name: "Alex"}
     let b = {name: "Petja"}
-    const hes = foo.bind(a)
+    const hes = (age) => foo.call(a, age, 'Minsk')
     const hes2 = foo.bind(b)
-    hes()
-    hes2()
+    hes(32)
+    hes2(40, 'Volkowysk')
 </script>
 </body>
 </html>
