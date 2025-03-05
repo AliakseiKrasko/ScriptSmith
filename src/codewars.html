@@ -7,15 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function foo(age, city) {
-        console.log(`${this.name} live ${city} and hi ${age} yar`);
+
+    function foo2(arr) {
+        return arr.flatMap((el) => el > 18 ? { age: el } : []);
     }
 
-    let a = {name: "Alex"}
-    let b = {name: "Petja"}
-
-    foo.apply(a, [32, 'Minsk'])
-    foo.apply(40, [40, 'Volkowysk'])
+    console.log (foo2([13, 24, 43]))
 </script>
 </body>
 </html>
