@@ -8,11 +8,19 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    function foo2(arr) {
-        return arr.flatMap((el) => el > 18 ? { age: el } : []);
+    function foo(arr) {
+        const foo2 = arr.slice()
+        for (let i = 0; i < foo2.length - 1; i++){
+            for(let j = 0; j < foo2.length - i - 1; j++){
+                if (foo2[j] > foo2[j + 1]) {
+                    [foo2[j], foo2[j + 1]] = [foo2[j + 1], foo2[j]]
+                }
+            }
+        }
+        return foo2
     }
 
-    console.log (foo2([13, 24, 43]))
+    console.log (foo([3, 8, 13, 24, 43, 2]))
 </script>
 </body>
 </html>
