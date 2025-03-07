@@ -9,17 +9,14 @@
     //TODO: практика решения задач по нативным javascript
 
     function foo(arr) {
-        const foo2 = arr.slice()
-        for (let i = 0; i < foo2.length - 1; i++){
-            for(let j = 0; j < foo2.length - i - 1; j++){
-                if (foo2[j] > foo2[j + 1]) {
-                    [foo2[j], foo2[j + 1]] = [foo2[j + 1], foo2[j]]
-                }
-            }
-        }
-        return foo2
-    }
+        if (arr.length <= 1) return arr
+        let pivot = arr[Math.floor(arr.length / 2)]
+        let left = arr.filter((x) => x < pivot)
+        let middle = arr.filter((x) => x === pivot)
+        let right = arr.filter((x) => x > pivot)
 
+        return [...foo(left), ...middle, ...foo(right)]
+    }
     console.log (foo([3, 8, 13, 24, 43, 2]))
 </script>
 </body>
