@@ -8,26 +8,12 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    function mergeSort(arr) {
-        if (arr.length < 2) return arr;
-
-        let mid = Math.floor(arr.length / 2);
-        let left = mergeSort(arr.slice(0, mid));
-        let right = mergeSort(arr.slice(mid));
-
-        function merge(left, right) {
-            let result = [], i = 0, j = 0;
-
-            while (i < left.length && j < right.length) {
-                result.push(left[i] < right[j] ? left[i++] : right[j++]);
-            }
-
-            return [...result, ...left.slice(i), ...right.slice(j)];
-        }
-
-        return merge(left, right);
+    function addLength(str) {
+        const arrStr = str.split(' ')
+        const res = arrStr.map((word) => `${word} ${word.length}`)
+        return res
     }
-    console.log (mergeSort([3, 8, 13, 24, 43, 2]))
+    console.log (addLength("apple ban"))
 </script>
 </body>
 </html>
