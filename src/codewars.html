@@ -8,17 +8,33 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    function smallEnough(arr){
-        // const numbers = [1, 45, 66, 2, 4, 6, -2, -10, -100, 100]
-        let max = 0
-        for (let i = 0; i < arr.length; i++) {
-            if(max < arr[i]){
-                debugger
-                max = arr[i]
-            }
-        }
-        return max
-    }
+    console.log("1");
+
+    setTimeout(() => {
+        console.log("2");
+    }, 0);
+
+    Promise.resolve().then(() => {
+        console.log("3");
+        queueMicrotask(() => console.log("4"));
+    });
+
+    (async () => {
+        console.log("5");
+
+        await Promise.resolve();
+
+        console.log("6");
+
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        console.log("7");
+    })();
+
+    queueMicrotask(() => console.log("8"));
+
+    console.log("9");
+
     console.log (smallEnough([1, 45, 66, 2, 4, 6, -2, -10, -100, 100]))
 </script>
 </body>
