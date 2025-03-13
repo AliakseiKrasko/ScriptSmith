@@ -8,10 +8,18 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    function smallEnough(a, limit){
-        return a.every((num) => num <= limit)
+    function smallEnough(arr){
+        // const numbers = [1, 45, 66, 2, 4, 6, -2, -10, -100, 100]
+        let max = 0
+        for (let i = 0; i < arr.length; i++) {
+            if(max < arr[i]){
+                debugger
+                max = arr[i]
+            }
+        }
+        return max
     }
-    console.log (smallEnough([1, 3, 4, 2], 6))
+    console.log (smallEnough([1, 45, 66, 2, 4, 6, -2, -10, -100, 100]))
 </script>
 </body>
 </html>
