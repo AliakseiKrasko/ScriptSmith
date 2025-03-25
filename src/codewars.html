@@ -7,58 +7,32 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    const university = {
-        name: "Tech University",
-        location: "New York",
-        faculties: [
-            {
-                name: "Faculty of Computer Science",
-                departments: [
-                    {
-                        name: "Software Engineering",
-                        teachers: [
-                            { name: "Alice Johnson", age: 45, subjects: ["OOP", "Databases"] },
-                            { name: "Bob Smith", age: 38, subjects: ["Algorithms", "JavaScript"] }
-                        ]
-                    },
-                    {
-                        name: "Artificial Intelligence",
-                        teachers: [
-                            { name: "Carol White", age: 50, subjects: ["Machine Learning", "Python"] }
-                        ]
-                    }
-                ]
-            },
-            {
-                name: "Faculty of Electronics",
-                departments: [
-                    {
-                        name: "Robotics",
-                        teachers: [
-                            { name: "David Black", age: 42, subjects: ["Robotics", "C++"] }
-                        ]
-                    }
-                ]
+    const merge = function(nums1, m, nums2, n) {
+        let i = m - 1;         // последний реальный элемент в nums1
+        let j = n - 1;         // последний элемент в nums2
+        let k = m + n - 1;     // конец массива nums1
+
+        // Пока есть что сравнивать в обоих массивах
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[k] = nums1[i];
+                i--;
+            } else {
+                nums1[k] = nums2[j];
+                j--;
             }
-        ]
-    };
-
-const fac1 =
-    {
-    name: "Faculty of Computer Science111",
-    departments: [
-        {
-            name: "Software Engineering",
-            teachers: [
-                { name: "Alice Johnson", age: 45, subjects: ["OOP", "Databases"] },
-                { name: "Bob Smith", age: 38, subjects: ["Algorithms", "JavaScript"] }
-            ]
+            k--;
         }
-        ]
-    }
-    const uniCopy = {...university, faculties: [...university.faculties]}
-    console.log(uniCopy)
 
+        // Если остались элементы в nums2 (в начале)
+        while (j >= 0) {
+            nums1[k] = nums2[j];
+            j--;
+            k--;
+        }
+return nums1
+    };
+    console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3))
 
 </script>
 </body>
