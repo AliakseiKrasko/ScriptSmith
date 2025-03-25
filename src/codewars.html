@@ -7,24 +7,58 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function slidingWindow(arr, k) {
-        let maxSum = 0
-        let windowSum = 0
+    const university = {
+        name: "Tech University",
+        location: "New York",
+        faculties: [
+            {
+                name: "Faculty of Computer Science",
+                departments: [
+                    {
+                        name: "Software Engineering",
+                        teachers: [
+                            { name: "Alice Johnson", age: 45, subjects: ["OOP", "Databases"] },
+                            { name: "Bob Smith", age: 38, subjects: ["Algorithms", "JavaScript"] }
+                        ]
+                    },
+                    {
+                        name: "Artificial Intelligence",
+                        teachers: [
+                            { name: "Carol White", age: 50, subjects: ["Machine Learning", "Python"] }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: "Faculty of Electronics",
+                departments: [
+                    {
+                        name: "Robotics",
+                        teachers: [
+                            { name: "David Black", age: 42, subjects: ["Robotics", "C++"] }
+                        ]
+                    }
+                ]
+            }
+        ]
+    };
 
-        for (let i = 0; i < k; i++) {
-            windowSum += arr[i]
+const fac1 =
+    {
+    name: "Faculty of Computer Science111",
+    departments: [
+        {
+            name: "Software Engineering",
+            teachers: [
+                { name: "Alice Johnson", age: 45, subjects: ["OOP", "Databases"] },
+                { name: "Bob Smith", age: 38, subjects: ["Algorithms", "JavaScript"] }
+            ]
         }
-        maxSum = windowSum
-
-        for (let i = k; i < arr.length; i++) {
-            windowSum += arr[i] - arr[i - k]
-            maxSum = Math.max(maxSum, windowSum)
-        }
-        return maxSum
-
+        ]
     }
+    const uniCopy = {...university, faculties: [...university.faculties]}
+    console.log(uniCopy)
 
-    console.log(slidingWindow([5, 4, 5, 1, 4, 2, 5, 6], 3))
 
 </script>
 </body>
