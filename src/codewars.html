@@ -7,19 +7,23 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    const expect = function(val) {
+    var createCounter = function(init) {
+        let current = init;
+
         return {
-            toBe: function(n) {
-                if (val === n) return true;
-                throw new Error("Not Equal");
+            increment: function() {
+                return ++current;
             },
-            notToBe: function(n) {
-                if (val !== n) return true;
-                throw new Error("Equal");
+            decrement: function() {
+                return --current;
+            },
+            reset: function() {
+                current = init;
+                return current;
             }
         };
     };
-    console.log(expect(5).notToBe(5))
+    console.log(createCounter(5).increment())
 
 </script>
 </body>
