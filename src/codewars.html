@@ -7,23 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    var createCounter = function(init) {
-        let current = init;
+    function mergeAlternately(word1, word2) {
+        let result = '';
+        let maxLength = Math.max(word1.length, word2.length);
 
-        return {
-            increment: function() {
-                return ++current;
-            },
-            decrement: function() {
-                return --current;
-            },
-            reset: function() {
-                current = init;
-                return current;
-            }
-        };
-    };
-    console.log(createCounter(5).increment())
+        for (let i = 0; i < maxLength; i++) {
+            if (i < word1.length) result += word1[i];
+            if (i < word2.length) result += word2[i];
+        }
+
+        return result;
+    }
+    console.log(mergeAlternately("adf", "kli"))
 
 </script>
 </body>
