@@ -7,18 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function mergeAlternately(word1, word2) {
-        let result = '';
-        let maxLength = Math.max(word1.length, word2.length);
-
-        for (let i = 0; i < maxLength; i++) {
-            if (i < word1.length) result += word1[i];
-            if (i < word2.length) result += word2[i];
+    let gcdOfStrings = function(str1, str2) {
+        function gcd(a, b) {
+            return b === 0 ? a : gcd(b, a % b)
         }
+        if (str1 + str2 !== str2 + str1) {
+            return ""
+        }
+        const length = gcd(str1.length, str2.length)
+        return str1.slice(0, length)
 
-        return result;
-    }
-    console.log(mergeAlternately("вуц", "кне"))
+    };
+    console.log(gcdOfStrings("ABCABC", "ABC"))
 
 </script>
 </body>
