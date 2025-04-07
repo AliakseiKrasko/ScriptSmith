@@ -7,27 +7,32 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    let canPlaceFlowers = function(flowerbed, n) {
-        if (n === 0) return true;
+    let reverseVowels = function(s) {
+        const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+        const chars = s.split('')
+        let left = 0
+        let right = chars.length - 1
 
-        let count = 0;
-        for (let i = 0; i < flowerbed.length; i++) {
-            if (flowerbed[i] === 0) {
-                // Правильные проверки соседей:
-                const prevEmpty = i === 0 || flowerbed[i - 1] === 0;
-                const nextEmpty = i === flowerbed.length - 1 || flowerbed[i + 1] === 0;
-
-                if (prevEmpty && nextEmpty) {
-                    flowerbed[i] = 1; // Сажаем цветок
-                    count++;
-                    if (count >= n) return true; // Уже посадили нужное количество
-                }
+        while (left < right) {
+            if (!vowels.has(chars[left])) {
+                left++
+                continue
             }
+
+            if (!vowels.has(chars[right])) {
+                right--
+                continue
+            }
+            [chars[left], chars[right]] = [chars[right], chars[left]]
+            left++
+            right--
         }
-        return count >= n;
+        return chars.join('')
+
+
     };
 
-    console.log(canPlaceFlowers([1, 0, 1, 0, 1], 1)); // true
+    console.log(reverseVowels("alexalon")); // true
 
 </script>
 </body>
