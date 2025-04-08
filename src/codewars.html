@@ -7,20 +7,24 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    let removeDuplicates = function(nums) {
-        let k = 0
+    var majorityElement = function(nums) {
+        let condidate = null
+        let count = 0
 
-
-        for (let i = 0; i < nums.length; i++) {
-            if(i === 0 || nums[i] !== nums[i - 1] ) {
-                nums[k] = nums[i]
-                k++
+        for (let num of nums) {
+            if(count === 0) {
+                condidate = num
+            }
+            if(num === condidate) {
+                count++
+            } else {
+                count--
             }
         }
-        return k
+        return condidate
     };
 
-    console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
+    console.log(majorityElement([2,2,1,1,1,2,2]));
 
 </script>
 </body>
