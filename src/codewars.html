@@ -7,11 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    let removeElement = function (nums, val) {
+    let removeDuplicates = function(nums) {
         let k = 0
 
+
         for (let i = 0; i < nums.length; i++) {
-            if (nums[i] !== val) {
+            if(i === 0 || nums[i] !== nums[i - 1] ) {
                 nums[k] = nums[i]
                 k++
             }
@@ -19,8 +20,7 @@
         return k
     };
 
-
-    console.log(removeElement([3, 2, 2, 3], 3));
+    console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
 
 </script>
 </body>
