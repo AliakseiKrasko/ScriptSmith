@@ -7,25 +7,29 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    let productExceptSelf = function(nums) {
-        const n = nums.length
-        const answer = new Array().fill(1) //create new array [1, 1, 1, 1]
-
-        let left = 1
-        for (let i = 0; i < n; i++){
-            answer[i] = left
-            left *= nums[i] //multiply all numbers on the right
+    let increasingTriplet = function (nums) {
+        /*let count = 0
+        for (let i = 0; i < nums.length; i++) {
+            if(i < i + 1 && nums[i] < nums[i + 1]) {
+                count ++
+            }
         }
+        return count >= 3*/
+        let first = Infinity
+        let second = Infinity
 
-        let right = 1
-        for (let i = n - 1; i >= 0; i--) {
-            answer[i] *= right
-            right *= nums[i] //multiply all numbers on the left
-
+        for(let num of nums){
+            if(num <= first){
+                first = num
+            } else if (num <= second){
+                second = num
+            } else {
+                return true
+            }
         }
-        return answer
+        return false
     };
-    console.log(productExceptSelf([-1,1,0,-3,3]));
+    console.log(increasingTriplet([2,1,5,0,6,1]));
 
 </script>
 </body>
