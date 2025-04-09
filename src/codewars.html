@@ -7,24 +7,25 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    var majorityElement = function(nums) {
-        let condidate = null
-        let count = 0
+    let productExceptSelf = function(nums) {
+        const n = nums.length
+        const answer = new Array().fill(1) //create new array [1, 1, 1, 1]
 
-        for (let num of nums) {
-            if(count === 0) {
-                condidate = num
-            }
-            if(num === condidate) {
-                count++
-            } else {
-                count--
-            }
+        let left = 1
+        for (let i = 0; i < n; i++){
+            answer[i] = left
+            left *= nums[i] //multiply all numbers on the right
         }
-        return condidate
-    };
 
-    console.log(majorityElement([2,2,1,1,1,2,2]));
+        let right = 1
+        for (let i = n - 1; i >= 0; i--) {
+            answer[i] *= right
+            right *= nums[i] //multiply all numbers on the left
+
+        }
+        return answer
+    };
+    console.log(productExceptSelf([-1,1,0,-3,3]));
 
 </script>
 </body>
