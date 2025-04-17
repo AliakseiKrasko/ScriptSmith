@@ -8,9 +8,10 @@
 <script>
     //TODO: практика решения задач по нативным javascript
     function filterRangeInPlace(arr) {
-        return arr.sort((a, b) => b - a )
+        const newArr = arr.slice()
+        return newArr
     }
-    console.log(filterRangeInPlace([5, 2, 1, -10, 8]))
+    console.log(filterRangeInPlace(["HTML", "JavaScript", "CSS"]))
 
 </script>
 </body>
