@@ -7,11 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascript
-    function isEven(num) {
-        return num % 2 === 0
+    function findMax(arr) {
+        // return arr.sort((a, b) => a - b)[arr.length - 1]
+        let max = 0
+        for (let i = 0; i < arr.length; i++){
+            if(arr[i] > max) {
+                max = arr[i]
+            }
+        }
+        return max
     }
 
-    console.log(isEven(4))
+    console.log(findMax([1, 5, 3, 9, 2]))
 
 </script>
 </body>
