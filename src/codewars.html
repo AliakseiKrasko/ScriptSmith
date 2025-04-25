@@ -8,20 +8,12 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    let menu = {
-        width: 200,
-        height: 300,
-        title: "My menu"
-    }
-    function multiplyNumeric(obj){
-        for (let key in obj){
-            if(typeof obj[key] === 'number'){
-                obj[key] *= 2
-            }
-        }
-    }
+    let isPalindrome = function(s) {
+        const clenedStr = s.replace(/[^a-z0-9]/gi, '').toLowerCase()
+        return clenedStr === clenedStr.split('').reverse().join('')
+    };
 
-    console.log(multiplyNumeric)
+    console.log(isPalindrome("A man, a plan, a canal: Panama"))
 
 
 </script>
