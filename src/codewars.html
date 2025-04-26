@@ -9,26 +9,15 @@
     //TODO: практика решения задач по нативным javascript
 
     let isValid = function(s) {
-        const stack  = []
-        const pairs = {
-            '(': ')',
-            '{': '}',
-            '[': ']'
+        if (3 in s){
+            return true
         }
+        return false
 
-        for (let char of s) {
-            if (char in pairs) {
-                stack.push(char)
-            } else {
-                const lastOpen = stack.pop()
-                if(pairs[lastOpen] !== char) {
-                    return false
-                }
-            }
-        }
-        return stack.length === 0
+
+
     };
-    console.log(isValid("()[]{}"))
+    console.log(isValid([2, 4, 6, 8]))
 
 
 </script>
