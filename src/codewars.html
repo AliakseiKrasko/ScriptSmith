@@ -8,12 +8,17 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    let isValid = function(s) {
-        for (let el of s) {
-            console.log(el * 2)
+    let isValid = function() {
+        const objIn = {
+            name: "Alex",
+            age: 40
         }
+        for(let i in objIn){
+            console.log(i)
+        }
+
     };
-    isValid([2, 4, 6, 8])
+    isValid()
 
 
 </script>
