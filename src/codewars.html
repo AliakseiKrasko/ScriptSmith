@@ -8,12 +8,18 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    let isPalindrome = function(s) {
-        const clenedStr = s.replace(/[^a-z0-9]/gi, '').toLowerCase()
-        return clenedStr === clenedStr.split('').reverse().join('')
-    };
+    let maxProfit = function(prices) {
+        let minPrice = Infinity;
+        let maxProfit = 0;
 
-    console.log(isPalindrome("A man, a plan, a canal: Panama"))
+        for (let price of prices) {
+            minPrice = Math.min(minPrice, price);
+            maxProfit = Math.max(maxProfit, price - minPrice);
+        }
+
+        return maxProfit;
+    };
+    console.log(maxProfit([7, 3, 1,5,3,6,4]))
 
 
 </script>
