@@ -9,15 +9,11 @@
     //TODO: практика решения задач по нативным javascript
 
     let isValid = function(s) {
-        if (3 in s){
-            return true
+        for (let el of s) {
+            console.log(el * 2)
         }
-        return false
-
-
-
     };
-    console.log(isValid([2, 4, 6, 8]))
+    isValid([2, 4, 6, 8])
 
 
 </script>
