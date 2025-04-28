@@ -8,32 +8,19 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    let romanToInt = function(s) {
-        const romanValues = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000
-        }
-       let total = 0
-       let prevValue = 0
+    var maxDepth = function(root) {
+        if (root === null) {
+            return 0; // если дерево пустое, глубина 0
+        } else {
+            // Рекурсивно находим глубину левого и правого поддеревьев
+            const leftDepth = maxDepth(root.left);
+            const rightDepth = maxDepth(root.right);
 
-       for (let i = s.length - 1; i >= 0; i--) {
-           const currentValue = romanValues[s[i]]
-           if (currentValue < prevValue) {
-               total -= currentValue
-           } else {
-               total += currentValue
-           }
-           prevValue = currentValue
-       }
-       return total
+            // Берем большее из двух и добавляем 1 за текущий узел
+            return Math.max(leftDepth, rightDepth) + 1;
+        }
     };
 
-    console.log(romanToInt("IV"))
 
 
 </script>
