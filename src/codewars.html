@@ -8,20 +8,33 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    var maxDepth = function(root) {
-        if (root === null) {
-            return 0; // если дерево пустое, глубина 0
-        } else {
-            // Рекурсивно находим глубину левого и правого поддеревьев
-            const leftDepth = maxDepth(root.left);
-            const rightDepth = maxDepth(root.right);
+    var canJump = function(nums) {
+        const n = nums.length;
 
-            // Берем большее из двух и добавляем 1 за текущий узел
-            return Math.max(leftDepth, rightDepth) + 1;
+        if (n <= 1) {
+            return true;
         }
+
+        let maxReach = 0;
+
+        for (let i = 0; i < n; i++) {
+
+            if (i > maxReach) {
+                return false;
+            }
+
+            const currentReach = i + nums[i];
+
+            maxReach = Math.max(maxReach, currentReach);
+
+            if (maxReach >= n - 1) {
+                return true;
+            }
+        }
+
     };
 
-
+    console.log(canJump([3,2,1,0,4]))
 
 </script>
 </body>
