@@ -8,33 +8,34 @@
 <script>
     //TODO: практика решения задач по нативным javascript
 
-    var canJump = function(nums) {
-        const n = nums.length;
+    function bubbleSort(arr) {
+        let n = arr.length;
+        // Флаг для оптимизации - если за проход не было перестановок, массив отсортирован
+        let swapped;
 
-        if (n <= 1) {
-            return true;
-        }
+        for (let i = 0; i < n - 1; i++) {
+            swapped = false;
 
-        let maxReach = 0;
-
-        for (let i = 0; i < n; i++) {
-
-            if (i > maxReach) {
-                return false;
+            for (let j = 0; j < n - i - 1; j++) {
+                // Сравниваем соседние элементы
+                if (arr[j] > arr[j + 1]) {
+                    // Меняем местами, если текущий элемент больше следующего
+                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                    swapped = true;
+                }
             }
 
-            const currentReach = i + nums[i];
-
-            maxReach = Math.max(maxReach, currentReach);
-
-            if (maxReach >= n - 1) {
-                return true;
-            }
+            // Если перестановок не было, массив отсортирован
+            if (!swapped) break;
         }
 
-    };
+        return arr;
+    }
 
-    console.log(canJump([3,2,1,0,4]))
+    console.log(getCurrentSeconds())
+
+
+
 
 </script>
 </body>
