@@ -29,7 +29,96 @@
     }
 
     console.log(binarySearch([11, 12, 22, 25, 34, 64, 90]))
+    /*Условие задачи:
+        Напишите функцию binarySearch на JavaScript, которая принимает отсортированный массив чисел и целевое значение, а возвращает индекс этого значения в массиве или -1, если значение не найдено. Используйте алгоритм бинарного поиска.
 
+        Решение:
+    javascript
+    function binarySearch(sortedArray, target) {
+        let left = 0;
+        let right = sortedArray.length - 1;
+
+        while (left <= right) {
+            // Находим средний индекс
+            const mid = Math.floor((left + right) / 2);
+            const midValue = sortedArray[mid];
+
+            if (midValue === target) {
+                return mid; // Нашли элемент
+            } else if (midValue < target) {
+                left = mid + 1; // Ищем в правой половине
+            } else {
+                right = mid - 1; // Ищем в левой половине
+            }
+        }
+
+        return -1; // Элемент не найден
+    }
+
+    // Пример использования:
+    const sortedArray = [11, 12, 22, 25, 34, 64, 90];
+    const target = 25;
+    console.log(`Ищем ${target} в массиве:`, sortedArray);
+    const resultIndex = binarySearch(sortedArray, target);
+
+    if (resultIndex !== -1) {
+        console.log(`Элемент найден на позиции ${resultIndex}`);
+    } else {
+        console.log('Элемент не найден');
+    }
+    Объяснение алгоритма:
+        Бинарный поиск работает только на отсортированных массивах.
+
+        Алгоритм делит массив пополам на каждой итерации:
+
+        Находим средний элемент массива
+
+    Если средний элемент равен целевому - возвращаем его индекс
+
+    Если средний элемент меньше целевого - продолжаем поиск в правой половине
+
+    Если средний элемент больше целевого - продолжаем поиск в левой половине
+
+    Поиск продолжается, пока границы поиска (left и right) не пересекутся.
+
+        Дополнительные варианты реализации:
+        Рекурсивная версия:
+        javascript
+    function binarySearchRecursive(sortedArray, target, left = 0, right = sortedArray.length - 1) {
+        if (left > right) return -1;
+
+        const mid = Math.floor((left + right) / 2);
+        const midValue = sortedArray[mid];
+
+        if (midValue === target) return mid;
+
+        return midValue < target
+            ? binarySearchRecursive(sortedArray, target, mid + 1, right)
+            : binarySearchRecursive(sortedArray, target, left, mid - 1);
+    }
+    Поиск первого вхождения (если есть дубликаты):
+    javascript
+    function binarySearchFirstOccurrence(sortedArray, target) {
+        let left = 0;
+        let right = sortedArray.length - 1;
+        let result = -1;
+
+        while (left <= right) {
+            const mid = Math.floor((left + right) / 2);
+
+            if (sortedArray[mid] === target) {
+                result = mid;
+                right = mid - 1; // Продолжаем искать в левой части
+            } else if (sortedArray[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return result;
+    }
+    Сложность алгоритма: O(log n), так как на каждом шаге область поиска уменьшается вдвое.*/
 
 
 
