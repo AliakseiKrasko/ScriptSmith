@@ -6,9 +6,21 @@
 </head>
 <body>
 <script>
-    //TODO: практика решения задач по нативным javascript
+    //TODO: практика решения задач по нативным javascriptlog
+    console.log(1)
 
-
+    Promise.resolve().then(() => console.log(2));
+    Promise.resolve()
+        .then(() => {
+            setTimeout(() => console.log(3));
+        })
+        .then(() => console.log(4));
+    Promise.resolve().then(() => console.log(5));
+    setTimeout(() => console.log(6))
+    setTimeout(() => Promise.resolve().then(() => console.log(7)));
+    setTimeout(() => console.log(8))
+    Promise.resolve().then(() => console.log(9));
+    console.log(10);
 </script>
 </body>
 </html>
