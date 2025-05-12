@@ -15,19 +15,21 @@
         { name: "Eve", age: 35 },
     ];
     function groupBy(arr, key) {
-        const groups = {};
-        arr.forEach(obj => {
-            const groupKey = obj[key];
-            groups[groupKey] = groups[groupKey] || []; // Если нет ключа, создаём массив
-            groups[groupKey].push(obj);
-        });
-        return groups;
+        const res = {}
+       arr.forEach(obj => {
+           const firstLetter = (obj[key])[0]
+           res[firstLetter] = res[firstLetter] || []
+           res[firstLetter].push(obj)
+       })
+        return res
     }
 
-    const result = groupBy(users, "age");
+    console.log(groupBy(users, "name"))
 
 
-    console.log(result)
+
+
+
 </script>
 </body>
 </html>
