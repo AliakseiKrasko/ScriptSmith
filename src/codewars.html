@@ -7,20 +7,27 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    console.log(1)
+    const users = [
+        { name: "Alice", age: 25 },
+        { name: "Bob", age: 30 },
+        { name: "Charlie", age: 25 },
+        { name: "David", age: 30 },
+        { name: "Eve", age: 35 },
+    ];
+    function groupBy(arr, key) {
+        const groups = {};
+        arr.forEach(obj => {
+            const groupKey = obj[key];
+            groups[groupKey] = groups[groupKey] || []; // Если нет ключа, создаём массив
+            groups[groupKey].push(obj);
+        });
+        return groups;
+    }
 
-    Promise.resolve().then(() => console.log(2));
-    Promise.resolve()
-        .then(() => {
-            setTimeout(() => console.log(3));
-        })
-        .then(() => console.log(4));
-    Promise.resolve().then(() => console.log(5));
-    setTimeout(() => console.log(6))
-    setTimeout(() => Promise.resolve().then(() => console.log(7)));
-    setTimeout(() => console.log(8))
-    Promise.resolve().then(() => console.log(9));
-    console.log(10);
+    const result = groupBy(users, "age");
+
+
+    console.log(result)
 </script>
 </body>
 </html>
