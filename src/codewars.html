@@ -7,12 +7,19 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const clearStr = str.toLocaleLowerCase().replace(/[^а-яa-z0-9]/gi, "")
-        return clearStr === clearStr.split(" ").reverse().join(" ");
+    function areAnagrams(str1, str2) {
+        const str1Clear = str1.toLowerCase().replace(/\s+/g, '');
+        const str2Clear = str2.toLowerCase().replace(/\s+/g, '');
+
+        if(str1Clear.length !== str2Clear.length) return false;
+
+        const sortedStr1 = str1Clear.split('').sort().join('');
+        const sortedStr2 = str2Clear.split('').sort().join('');
+
+        return sortedStr1 === sortedStr2;
     }
 
-    console.log(isPalindrome("А роза упала на лапу Азора"))
+    console.log(areAnagrams("listen", "silent"))
 
 
 
