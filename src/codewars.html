@@ -7,11 +7,20 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function reverseWords(str) {
-        return str.split(' ').map(word => word.split('').reverse().join('')).join(' ') ;
+    function findLongestWord(str) {
+        const words = str.split(' ');
+        let word = words[0];
+        for (let i = 0; i < words.length; i++) {
+
+            if(words[i].length > word.length) {
+                word = words[i];
+            }
+
+        }
+        return word
     }
 
-    console.log(reverseWords("JavaScript это интересно"))
+    console.log(findLongestWord("Съешь ещё этих мягких французских булок"))
 
 
 
