@@ -7,25 +7,21 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countRepeatedCharacters(str) {
-        let res = {}
-        const lowerStr = str.toLowerCase();
+    function removeDuplicates(str) {
+        let result = '';
+        const seen = new Set();
 
-        for (char of lowerStr) {
-            if(char === " ") continue
-
-            res[char] = (res[char] || 0) + 1
-        }
-
-        for (let key in res) {
-            if(res[key] === 1){
-                delete res[key]
+        for (let char of str) {
+            if (!seen.has(char)) {
+                seen.add(char);
+                result += char;
             }
         }
-        return res
+
+        return result;
     }
 
-    console.log(countRepeatedCharacters('hello world'))
+    console.log(removeDuplicates('abacabad'))
 
 
 
