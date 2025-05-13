@@ -7,12 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function areAnagrams(str1, str2) {
-        const normalize = str => str.toLowerCase().replace(/[^а-яa-z/g]/g, '').split('').sort().join('');
-        return normalize(str1) === normalize(str2);
+    function isPalindrome(str) {
+        const clearStr = str.toLocaleLowerCase().replace(/[^а-яa-z0-9]/gi, "")
+        return clearStr === clearStr.split(" ").reverse().join(" ");
     }
 
-    console.log(areAnagrams("Лунь", "нуль"))
+    console.log(isPalindrome("А роза упала на лапу Азора"))
 
 
 
