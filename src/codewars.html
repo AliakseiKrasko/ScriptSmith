@@ -7,11 +7,25 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function reverseWords(str) {
-        return str.split(' ').reverse().join(' ');
+    function countRepeatedCharacters(str) {
+        let res = {}
+        const lowerStr = str.toLowerCase();
+
+        for (char of lowerStr) {
+            if(char === " ") continue
+
+            res[char] = (res[char] || 0) + 1
+        }
+
+        for (let key in res) {
+            if(res[key] === 1){
+                delete res[key]
+            }
+        }
+        return res
     }
 
-    console.log(reverseWords('hello world'))
+    console.log(countRepeatedCharacters('hello world'))
 
 
 
