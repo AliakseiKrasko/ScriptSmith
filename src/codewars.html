@@ -7,12 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countVowels(str) {
-        const vowels = 'аеёиоуыэюяaeiou'
-        return str.toLowerCase().split('').filter(lit => vowels.includes(lit)).length
+    function reverseWords(str) {
+        return str.split(' ').reverse().join(' ');
     }
 
-    console.log(countVowels("Привет мир"))
+    console.log(reverseWords("JavaScript это интересно"))
 
 
 
