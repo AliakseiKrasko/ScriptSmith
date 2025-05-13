@@ -7,26 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const users = [
-        { name: "Alice", age: 25 },
-        { name: "Bob", age: 30 },
-        { name: "Charlie", age: 25 },
-        { name: "David", age: 30 },
-        { name: "Eve", age: 35 },
-    ];
-    function groupBy(arr, key) {
-        const res = {}
-       arr.forEach(obj => {
-           const firstLetter = (obj[key])[0]
-           res[firstLetter] = res[firstLetter] || []
-           res[firstLetter].push(obj)
-       })
-        return res10
-
-
+    function isPalindrome(str) {
+        const clearStr = str.toLocaleLowerCase().replace(/[^а-яa-z]/g, '')
+        return clearStr === clearStr.split('').reverse().join('')
     }
 
-    console.log(groupBy(users, "name"))
+    console.log(isPalindrome(""))
 
 
 
