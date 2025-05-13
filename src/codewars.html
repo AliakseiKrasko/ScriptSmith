@@ -7,19 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function areAnagrams(str1, str2) {
-        const str1Clear = str1.toLowerCase().replace(/\s+/g, '');
-        const str2Clear = str2.toLowerCase().replace(/\s+/g, '');
-
-        if(str1Clear.length !== str2Clear.length) return false;
-
-        const sortedStr1 = str1Clear.split('').sort().join('');
-        const sortedStr2 = str2Clear.split('').sort().join('');
-
-        return sortedStr1 === sortedStr2;
+    function reverseWords(str) {
+        return str.split(' ').reverse().join(' ');
     }
 
-    console.log(areAnagrams("listen", "silent"))
+    console.log(reverseWords('hello world'))
 
 
 
