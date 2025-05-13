@@ -7,12 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const clearStr = str.toLocaleLowerCase().replace(/[^а-яa-z]/g, '')
-        return clearStr === clearStr.split('').reverse().join('')
+    function countVowels(str) {
+        const vowels = 'аеёиоуыэюяaeiou'
+        return str.toLowerCase().split('').filter(lit => vowels.includes(lit)).length
     }
 
-    console.log(isPalindrome(""))
+    console.log(countVowels("Привет мир"))
 
 
 
