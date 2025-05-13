@@ -7,20 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function findLongestWord(str) {
-        const words = str.split(' ');
-        let word = words[0];
-        for (let i = 0; i < words.length; i++) {
-
-            if(words[i].length > word.length) {
-                word = words[i];
-            }
-
-        }
-        return word
+    function maskCardNumber(cardNumber) {
+        if (cardNumber.length <= 4) return cardNumber;
+        return '#'.repeat(cardNumber.length - 4) + cardNumber.slice(cardNumber.length - 4)
     }
 
-    console.log(findLongestWord("Съешь ещё этих мягких французских булок"))
+    console.log(maskCardNumber("1234567890123456"))
 
 
 
