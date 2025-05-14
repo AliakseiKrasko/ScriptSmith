@@ -7,21 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function removeDuplicates(str) {
-        let result = '';
-        const seen = new Set();
-
-        for (let char of str) {
-            if (!seen.has(char)) {
-                seen.add(char);
-                result += char;
-            }
-        }
-
-        return result;
+    function getUnique(arr) {
+        return [...new Set(arr)];
     }
 
-    console.log(removeDuplicates('abacabad'))
+    console.log(getUnique([1, 2, 2, 3, 4, 4, 5]))
 
 
 
