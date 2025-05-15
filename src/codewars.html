@@ -7,33 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function groupBy(arr, key) {
-        const grouped = {}
-        arr.forEach(el => {
-            const groupKey  = el[key]
-            if(!grouped[groupKey]) {
-                grouped[groupKey] = []
-            }
-            grouped[groupKey].push(el)
-        })
-        return grouped
+    function reverseWords (str) {
+        return str.split(' ').reverse().join(' ')
     }
 
-
-    const users = [
-        {id: 1, name: "Alice", age: 25},
-        {id: 2, name: "Bob", age: 30},
-        {id: 3, name: "Charlie", age: 25}
-    ];
-
-    console.log(groupBy(users, 'age'));
-    /*
-    {
-      "25": [{ id: 1, name: "Alice", age: 25 }, { id: 3, name: "Charlie", age: 25 }],
-      "30": [{ id: 2, name: "Bob", age: 30 }]
-    }
-    */
-
+    console.log(reverseWords("Hello world"));
 
 </script>
 </body>
