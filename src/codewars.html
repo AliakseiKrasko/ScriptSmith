@@ -7,12 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const newStr = str.toLowerCase().replace(/[^а-яa-z]/g, '')
-        return newStr === newStr.split('').reverse().join('')
+    function countVowels(str) {
+        const newStr = str.match(/[aoiue]/gi)
+        return newStr ? newStr.length : 0
     }
 
-    console.log(isPalindrome("A man, a plan, a canal: Panama!"));
+    console.log(countVowels("Why do you ask?"));
 
 </script>
 </body>
