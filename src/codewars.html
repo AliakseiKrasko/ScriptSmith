@@ -8,7 +8,7 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
     function reverseWords (str) {
-        return str.split(' ').reverse().join(' ')
+        return str.split(' ').map(el => el.split('').reverse().join('')).join(' ')
     }
 
     console.log(reverseWords("Hello world"));
