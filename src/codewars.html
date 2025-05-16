@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function sumArray(arr) {
-        return arr.reduce((acc, el) => acc + el, 0)
+    function getUnique(arr) {
+        return [...new Set(arr)]
     }
 
-    console.log(sumArray([1, 2, 3, 4]));
+    console.log(getUnique([1, 2, 2, 3, 4, 4, 4]));
 
 </script>
 </body>
