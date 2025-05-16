@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function maskify(str) {
-        return str.slice(0, -4).replace(/./g, '#') + str.slice(-4)
+    function sumArray(arr) {
+        return arr.reduce((acc, el) => acc + el, 0)
     }
 
-    console.log(maskify("4556364607935616"));
+    console.log(sumArray([1, 2, 3, 4]));
 
 </script>
 </body>
