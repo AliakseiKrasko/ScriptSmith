@@ -7,11 +7,36 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function reverseArray(arr) {
-        return arr.map((_, i) => arr[arr.length - 1 - i])
-    }
+    const users = [
+        { id: 1, name: "Alice", age: 25 },
+        { id: 2, name: "Bob", age: 30 },
+        { id: 3, name: "Alice", age: 28 }
+    ];
 
-    console.log(reverseArray([1, 2, 3, 4]));
+    function groupBy(arr, key){
+        const newObj = {}
+        arr.forEach(arrItem => {
+            const group = arrItem[key]
+            newObj[group] = newObj[group] || []
+            newObj[group].push(arrItem)
+        })
+        return newObj
+    }
+    // groupBy(users, "name");
+
+
+    console.log(groupBy(users, "name"));
+
+    /*
+    {
+      Alice: [
+        { id: 1, name: "Alice", age: 25 },
+        { id: 3, name: "Alice", age: 28 }
+      ],
+      Bob: [{ id: 2, name: "Bob", age: 30 }]
+    }
+    */
+
 
 </script>
 </body>
