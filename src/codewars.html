@@ -8,14 +8,9 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
     function findLongestWord(arr) {
-      const newArr = arr.join(" ").split(' ')
-        let maxWord = ""
-        newArr.forEach(el => {
-            if(el.length > maxWord.length) {
-                maxWord = el
-            }
-        })
-        return maxWord
+        return arr.reduce((leng, word) =>
+            word.length > leng.length ? word : leng, "")
+
     }
 
     console.log(findLongestWord(["JavaScript", "Python", "Ruby"]));
