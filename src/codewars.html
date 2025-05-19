@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const newStr = str.toLowerCase().replace(/[^а-яa-z]/g, "").split("")
-        return newStr === newStr.reverse()
+    function findLongestWord(str) {
+        const newStr = str.split(' ')
+        return newStr.reduce((prev, word) => Math.max(prev, word.length), 0)
     }
-    console.log(isPalindrome("А роза упала на лапу Азора"))
+    console.log(findLongestWord("JavaScript это интересно"))
 </script>
 </body>
 </html>
