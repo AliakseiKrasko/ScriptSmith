@@ -7,16 +7,16 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function filterEvenNumbers(arr) {
-        const newArr = []
-        for (let i = 0; i < arr.length; i++) {
-            if(arr[i] % 2 === 0) {
-                newArr.push(arr[i])
-            }
-        }
-        return newArr
+    function capitalizeAndLength(arr) {
+        const obj = []
+        arr.forEach(word => {
+            const copitalized = word.charAt(0).toUpperCase() + word.slice(1)
+            const objArr = { capitalized: copitalized, length: word.length }
+            obj.push(objArr);
+        })
+        return obj
     }
-    console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+    console.log(capitalizeAndLength(['привет', 'мир', 'javascript']))
 </script>
 </body>
 </html>
