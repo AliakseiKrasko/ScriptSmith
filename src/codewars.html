@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function findLongestWord(str) {
-        const newStr = str.split(' ')
-        return newStr.reduce((prev, word) => Math.max(prev, word.length), 0)
+    function countVowels(str) {
+        const vowels = ["a", "e", "i", "u", "o"];
+        return str.toLowerCase().split("").reduce((count, char) => vowels.includes(char) ? count + 1 : count, 0)
     }
-    console.log(findLongestWord("JavaScript это интересно"))
+    console.log(countVowels("Hello World!"))
 </script>
 </body>
 </html>
