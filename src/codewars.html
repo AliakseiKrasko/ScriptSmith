@@ -7,15 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function reverseString(str) {
-        const newStr = []
-        for(let i = str.length - 1; i  >= 0; i--) {
-            newStr.push(str[i])
-        }
-        return newStr.join('')
+    function isPalindrome(str) {
+        const newStr = str.toLowerCase().replace(/[^а-яa-z]/g, "").split("")
+        return newStr === newStr.reverse()
     }
-
-    console.log(reverseString("hello"))
+    console.log(isPalindrome("А роза упала на лапу Азора"))
 </script>
 </body>
 </html>
