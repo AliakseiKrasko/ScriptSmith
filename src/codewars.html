@@ -8,14 +8,23 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
     function maxWord(str) {
-       const newStr = str.toLowerCase().split(' ');
-       for(const char of newStr){
-           var max = 0
-           if(char.length > max){
-               max = char.length
-           }
-       }
-       return max
+      const words = str.toLowerCase().replace(/[^a-zа-я0-9\s]/gi, '').split(/\s+/);
+      function wordCount(word) {
+          const charSet = new Set()
+          for (let char of word) {
+              if (charSet.has(char)) return false
+              charSet.add(char)
+          }
+          return true
+      }
+      let max = ""
+        for (let word of words) {
+            if (wordCount(word) && word.length > max.length) {
+                max = word
+            }
+        }
+        return max
+
     }
 
     console.log(maxWord("The quick brown fox jumps over the lazy dog"))
