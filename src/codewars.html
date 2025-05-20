@@ -7,12 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function polindrom(str) {
-        const newStr = str.toLowerCase().replace(/[^a-zа-я0-9]/g, '').split('');
-        return newStr === newStr.reverse()
+    function maxWord(str) {
+       const newStr = str.toLowerCase().split(' ');
+       return newStr.reduce((prev, word) => word.length > prev.length ? word : prev , '')
     }
 
-    console.log(polindrom("A man, a plan, a canal: Panam"))
+    console.log(maxWord("The quick brown fox jumps over the lazy dog"))
 </script>
 </body>
 </html>
