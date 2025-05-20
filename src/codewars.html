@@ -7,19 +7,25 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function groupAnagrams(str) {
-       const obj = {}
-        for(const char of str) {
-            const sortWord = char.split('').sort().join('')
-            if(obj[sortWord]) {
-                obj[sortWord].push(char)
-            } else {
-                obj[sortWord] = [char]
-            }
+    function maxSubArraySumWithMinK(nums, k) {
+       if(k > nums.length) return null
+
+        const n = nums.length
+        let sum = 0
+        for(let i = 0; i < k; i++) {
+            sum+= nums[i]
         }
-        return Object.values(obj)
+
+        let maxSum = sum
+        for(let i = k; i < n; i++) {
+            sum = sum + nums[i] -  nums[i - k]
+            maxSum = Math.max(maxSum, sum)
+        }
+
+        return maxSum
+
     }
-    console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+    console.log(maxSubArraySumWithMinK([1, -2, 3, 4, -5, 8], 3))
 </script>
 </body>
 </html>
