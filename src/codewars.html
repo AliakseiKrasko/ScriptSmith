@@ -7,20 +7,31 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function removeDuplicateChars(str) {
-        const arr = []
-        for (let i = 0; i < str.length; i++) {
-            if(!arr.includes(str[i])) {
-                arr.push(str[i])
-            }
+    function groupObjectsByProperty(array, property) {
+        const newArray = {};
+        for (const element of array ) {
+            const key = element[property];
+           if(key !== undefined) {
+               if (!newArray[key]) {
+                   newArray[key] = [];
+               }
+               newArray[key].push(element);
+           }
         }
-        return arr.join('')
+        return newArray;
     }
 
     // Примеры использования
-    console.log(removeDuplicateChars("hello")); // "helo"
-    console.log(removeDuplicateChars("programming")); // "progamin"
-    console.log(removeDuplicateChars("Hello World")); // "Helo Wrd"
+    const result1 = groupObjectsByProperty(
+        [
+            { id: 1, category: 'fruit', name: 'apple' },
+            { id: 2, category: 'vegetable', name: 'carrot' },
+            { id: 3, category: 'fruit', name: 'banana' },
+            { id: 4, name: 'orange' }
+        ],
+        'category'
+    );
+    console.log(result1); // Ожидаемый вывод: см. пример выше
 </script>
 </body>
 </html>
