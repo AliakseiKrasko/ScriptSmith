@@ -8,7 +8,13 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
     function removeDuplicateChars(str) {
-        return [...new Set(str)].join('')
+        const arr = []
+        for (let i = 0; i < str.length; i++) {
+            if(!arr.includes(str[i])) {
+                arr.push(str[i])
+            }
+        }
+        return arr.join('')
     }
 
     // Примеры использования
