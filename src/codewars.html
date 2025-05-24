@@ -7,27 +7,56 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function maxWord(str) {
-      const words = str.toLowerCase().replace(/[^a-zа-я0-9\s]/gi, '').split(/\s+/);
-      function wordCount(word) {
-          const charSet = new Set()
-          for (let char of word) {
-              if (charSet.has(char)) return false
-              charSet.add(char)
-          }
-          return true
-      }
-      let max = ""
-        for (let word of words) {
-            if (wordCount(word) && word.length > max.length) {
-                max = word
-            }
-        }
-        return max
-
+    const fakeAPI = (endpoint) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const success = Math.random() > 0.6; // 40% шанс успеха
+                if (success) {
+                    resolve({
+                        data: `Data from ${endpoint}`,
+                        timestamp: Date.now()
+                    });
+                } else {
+                    reject(new Error(`API ${endpoint} unavailable`));
+                }
+            }, Math.random() * 300 + 100); // случайная задержка 100-400мс
+        });
+    };
     }
+    // Нужно написать функцию loadWithBackoff:
+    // 1. Делает запрос к API
+    // 2. Если запрос неудачный - ждет начальную задержку (delay)
+    // 3. При каждом retry удваивает задержку (100мс → 200мс → 400мс → 800мс)
+    // 4. Максимум 4 попытки (включая первую)
+    // 5. Если все попытки неудачны - возвращает ошибку последнего запроса
+    // 6. Добавить логирование каждой попытки
 
-    console.log(maxWord("The quick brown fox jumps over the lazy dog"))
+    const loadWithBackoff = (endpoint, maxRetries = 3, initialDelay = 100) => {
+        return fakeAPI(endpoint)
+            .then((response) => {
+                return response
+            })
+            .catch((err) => {
+                if (maxRetries === 0) {
+                 throw err
+                }
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve(loadWithBackoff(endpoint, maxRetries - 1, maxRetries * 2));
+                    }, maxRetries)
+                })
+            })
+
+    };
+
+    // Тесты:
+    loadWithBackoff('/users')
+        .then(data => console.log('✅ Получили данные:', data))
+        .catch(err => console.log('❌ Не удалось загрузить:', err.message));
+
+    loadWithBackoff('/posts', 2, 200)
+        .then(data => console.log('✅ Получили посты:', data))
+        .catch(err => console.log('❌ Посты недоступны:', err.message));
 </script>
 </body>
 </html>
