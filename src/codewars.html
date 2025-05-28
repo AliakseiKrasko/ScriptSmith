@@ -7,31 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function groupObjectsByProperty(array, property) {
-        const newArray = {};
-        for (const element of array ) {
-            const key = element[property];
-           if(key !== undefined) {
-               if (!newArray[key]) {
-                   newArray[key] = [];
-               }
-               newArray[key].push(element);
-           }
-        }
-        return newArray;
+    function firstWord(str) {
+        return str
+            .split(' ')
+            .map(word => word[0].toUpperCase() + word.slice(1))
+            .join(' ');
     }
 
-    // Примеры использования
-    const result1 = groupObjectsByProperty(
-        [
-            { id: 1, category: 'fruit', name: 'apple' },
-            { id: 2, category: 'vegetable', name: 'carrot' },
-            { id: 3, category: 'fruit', name: 'banana' },
-            { id: 4, name: 'orange' }
-        ],
-        'category'
-    );
-    console.log(result1); // Ожидаемый вывод: см. пример выше
+    console.log(firstWord('hello my freind'))
 </script>
 </body>
 </html>
