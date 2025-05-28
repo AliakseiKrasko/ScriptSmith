@@ -8,8 +8,8 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
     function firstWord(str) {
-        const newStr = str.replace(/[^a-zа-я0-9]/g).split('')
-        return newStr === newStr.reverse()
+        const newStr = str.replace(/\s/g, '').toLowerCase()
+        return [...new Set(newStr)].length;
     }
 
     console.log(firstWord('А роза упала на лапу Азора'))
