@@ -7,12 +7,19 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function firstWord(str) {
-        const newStr = str.replace(/\s/g, '').toLowerCase()
-        return [...new Set(newStr)].length;
+    function firstWord(arr) {
+       const newArr = []
+       const seen = new Set()
+        arr.forEach(item => {
+            if (!seen.has(item)) {
+                newArr.push(...arr.filter(x => x === item))
+                seen.add(item)
+            }
+        })
+        return newArr
     }
 
-    console.log(firstWord('А роза упала на лапу Азора'))
+    console.log(firstWord([4, 2, 4, 3, 2, 1, 4]))
 </script>
 </body>
 </html>
