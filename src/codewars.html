@@ -7,17 +7,27 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function maxSubArray(nums) {
-        let maxSum = nums[0]
-        let currSum = nums[0]
-        for (let i = 1; i < nums.length; i++) {
-            currSum = Math.max(nums[i], currSum + nums[i])
-            maxSum = Math.max(maxSum, currSum)
+    const users = [
+        {id: 1, name: "Anna", age: 22, city: "Minsk"},
+        {id: 2, name: "Ivan", age: 27, city: "Moscow"},
+        {id: 3, name: "Maria", age: 19, city: "Minsk"},
+        {id: 4, name: "John", age: 30, city: "London"},
+        {id: 5, name: "Sergey", age: 27, city: "Moscow"}
+    ];
+
+    function uniqueCities(array) {
+     const cityUsers = {}
+        for (const user of  array) {
+            if (!cityUsers[user.city]) {
+                cityUsers[user.city] = [];
+            }
+            cityUsers[user.city].push(user.name);
         }
-        return maxSum
+        return cityUsers
     }
 
-    console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+    console.log(uniqueCities(users));
+
 </script>
 </body>
 </html>
