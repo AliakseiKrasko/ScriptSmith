@@ -7,19 +7,13 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function firstWord(arr) {
-       const newArr = []
-       const seen = new Set()
-        arr.forEach(item => {
-            if (!seen.has(item)) {
-                newArr.push(...arr.filter(x => x === item))
-                seen.add(item)
-            }
-        })
-        return newArr
+    function firstWord(arr, arr2) {
+       const newArr = arr.concat(arr2).sort((a,b) => a - b);
+        return [...new Set(newArr)];
+
     }
 
-    console.log(firstWord([4, 2, 4, 3, 2, 1, 4]))
+    console.log(firstWord([5, 2, 8, 2], [3, 2, 5, 7]))
 </script>
 </body>
 </html>
