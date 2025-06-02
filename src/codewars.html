@@ -7,26 +7,24 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const users = [
-        {id: 1, name: "Anna", age: 22, city: "Minsk"},
-        {id: 2, name: "Ivan", age: 27, city: "Moscow"},
-        {id: 3, name: "Maria", age: 19, city: "Minsk"},
-        {id: 4, name: "John", age: 30, city: "London"},
-        {id: 5, name: "Sergey", age: 27, city: "Moscow"}
-    ];
+    function longestSubstring(str) {
+        let maxLength = 0;
+        let start = 0;
+        const charMap = {};
 
-    function uniqueCities(array) {
-     const cityUsers = {}
-        for (const user of  array) {
-            if (!cityUsers[user.city]) {
-                cityUsers[user.city] = [];
+        for (let end = 0; end < str.length; end++) {
+            const currentChar = str[end];
+            if (charMap[currentChar] >= start) {
+                start = charMap[currentChar] + 1;
             }
-            cityUsers[user.city].push(user.name);
+            charMap[currentChar] = end;
+            maxLength = Math.max(maxLength, end - start + 1);
         }
-        return cityUsers
+
+        return maxLength;
     }
 
-    console.log(uniqueCities(users));
+    console.log(longestSubstring("abcabcbb")); // 3 ("abc")
 
 </script>
 </body>
