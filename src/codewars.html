@@ -7,24 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function longestSubstring(str) {
-        let maxLength = 0;
-        let start = 0;
-        const charMap = {};
-
-        for (let end = 0; end < str.length; end++) {
-            const currentChar = str[end];
-            if (charMap[currentChar] >= start) {
-                start = charMap[currentChar] + 1;
-            }
-            charMap[currentChar] = end;
-            maxLength = Math.max(maxLength, end - start + 1);
-        }
-
-        return maxLength;
+    function sumArray(arr) {
+        return arr.reduce((acc, el) => acc + el, 0)
     }
 
-    console.log(longestSubstring("pwwkw"));   // 3 ("wke")
+    console.log(sumArray([-1, 0, 1]));
 </script>
 </body>
 </html>
