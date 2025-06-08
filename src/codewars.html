@@ -8,10 +8,14 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
     function sumArray(arr) {
-        return arr.reduce((acc, el) => acc + el, 0)
+        let sum = 0
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        return sum
     }
 
-    console.log(sumArray([-1, 0, 1]));
+    console.log(sumArray([1, 2, 3, 4]));
 </script>
 </body>
 </html>
