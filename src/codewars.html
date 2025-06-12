@@ -7,17 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countVowels(str) {
-        const vowels = "аеёиоуыэюяaeiou"
-       let count = 0
-        for (let char of str.toLowerCase()) {
-            if (vowels.includes(char)) count++
-        }
-        return count
+    function isPalindrome(str) {
+        const newStr = str.toLowerCase().replace(/[^a-zа-я]/g, '')
+        return newStr === newStr.split('').reverse().join('')
     }
 
-    console.log(countVowels("Программирование")); // 6 (о, а, и, о, а, е)
-    console.log(countVowels("Hello World")); // 3 (e, o, o)
+    console.log(isPalindrome("А роза упала на лапу Азора")); // true
+    console.log(isPalindrome("Was it a car or a cat I saw?")); // true
+    console.log(isPalindrome("JavaScript")); // false
 </script>
 </body>
 </html>
