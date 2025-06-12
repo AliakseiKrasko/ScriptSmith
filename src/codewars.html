@@ -7,14 +7,31 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const newStr = str.toLowerCase().replace(/[^a-zа-я]/g, '')
-        return newStr === newStr.split('').reverse().join('')
+    function findLongestSubstringWithoutRepeats(str) {
+        let maxLength = 0;
+        let start = 0;
+        const charMap = {};
+
+        for (let end = 0; end < str.length; end++) {
+            const currentChar = str[end];
+            // Если символ уже встречался и его индекс >= start, сдвигаем start
+            if (charMap[currentChar] !== undefined && charMap[currentChar] >= start) {
+                start = charMap[currentChar] + 1;
+            }
+            // Обновляем индекс символа
+            charMap[currentChar] = end;
+            // Вычисляем максимальную длину
+            maxLength = Math.max(maxLength, end - start + 1);
+        }
+
+        return maxLength;
     }
 
-    console.log(isPalindrome("А роза упала на лапу Азора")); // true
-    console.log(isPalindrome("Was it a car or a cat I saw?")); // true
-    console.log(isPalindrome("JavaScript")); // false
+    console.log(findLongestSubstringWithoutRepeats("abcabcbb")); // 3 ("abc")
+    console.log(findLongestSubstringWithoutRepeats("bbbbb"));    // 1 ("b")
+    console.log(findLongestSubstringWithoutRepeats("pwwkew"));  // 3 ("wke")
+    console.log(findLongestSubstringWithoutRepeats(""));        // 0
+    console.log(findLongestSubstringWithoutRepeats("abcdefg")); // 7 ("abcdefg")
 </script>
 </body>
 </html>
