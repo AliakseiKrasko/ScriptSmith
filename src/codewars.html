@@ -7,17 +7,17 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function reverseString(str) {
-       let newStr = []
-        const arr = str.split('')
-        for (let i = arr.length - 1; i >= 0; i--) {
-            newStr.push(arr[i])
+    function countVowels(str) {
+        const vowels = "аеёиоуыэюяaeiou"
+       let count = 0
+        for (let char of str.toLowerCase()) {
+            if (vowels.includes(char)) count++
         }
-        return newStr.join('')
+        return count
     }
 
-    console.log(reverseString("привет")); // "тевирп"
-    console.log(reverseString("JavaScript")); // "tpircSavaJ"
+    console.log(countVowels("Программирование")); // 6 (о, а, и, о, а, е)
+    console.log(countVowels("Hello World")); // 3 (e, o, o)
 </script>
 </body>
 </html>
