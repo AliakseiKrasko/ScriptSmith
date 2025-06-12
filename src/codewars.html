@@ -7,12 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function mergeAndSort(arr1, arr2) {
-       const newArr = arr1.concat(arr2)
-        return [...new Set(newArr)].sort((a, b) => a - b)
+    function reverseString(str) {
+       return str.split('').reverse().join('')
     }
 
-    console.log(mergeAndSort([1, 3, 5], [2, 3, 4]));
+    console.log(reverseString("привет")); // "тевирп"
+    console.log(reverseString("JavaScript")); // "tpircSavaJ"
 </script>
 </body>
 </html>
