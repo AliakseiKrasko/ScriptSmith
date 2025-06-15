@@ -7,11 +7,19 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function sumEvenNumbers(arr) {
-        return arr.reduce((acc, el) => el % 2 === 0 ? acc + el : acc, 0)
+    function removeDuplicates(arr) {
+        const newArr = []
+        const noDub = new Set
+        for (let i = 0; i < arr.length; i++) {
+            if (!noDub.has(arr[i])) {
+                noDub.add(arr[i])
+                newArr.push(arr[i])
+            }
+        }
+        return newArr
     }
 
-    console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6])); // Должно вернуть 12 (2 + 4 + 6)
+    console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Должно вернуть [1, 2, 3, 4, 5]
 </script>
 </body>
 </html>
