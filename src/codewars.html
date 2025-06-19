@@ -7,12 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countVowels(str) {
-        const lit = ['a', 'e', 'i', 'o', 'u']
-        return str.toLowerCase().split('').filter(char => lit.includes(char)).length
+    function reverseWords(str) {
+        return str.split(' ').map(el => el.split('').reverse().join('')).join(' ')
     }
 
-    console.log(countVowels("Hello World"))
+    console.log(reverseWords("Hello World")); // "olleH dlroW"
 </script>
 </body>
 </html>
