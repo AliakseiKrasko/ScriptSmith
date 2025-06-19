@@ -9,14 +9,7 @@
     //TODO: практика решения задач по нативным javascriptlog
     function countVowels(str) {
         const lit = ['a', 'e', 'i', 'o', 'u']
-        let count = 0
-        const newStr = str.toLowerCase().split('')
-        for (let i = 0; i < newStr.length; i++) {
-            if (lit.includes(newStr[i])){
-                count++
-            }
-        }
-        return count
+        return str.toLowerCase().split('').filter(char => lit.includes(char)).length
     }
 
     console.log(countVowels("Hello World"))
