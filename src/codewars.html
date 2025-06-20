@@ -9,7 +9,7 @@
     //TODO: практика решения задач по нативным javascriptlog
     function interleave(arr1, arr2) {
         const newArr = []
-        const maxArrLength = Math.max(arr1.length, arr2.length)
+        const maxArrLength = Math.min(arr1.length, arr2.length)
         for (let i = 0; i < maxArrLength; i++) {
             if (i < arr1.length) newArr.push(arr1[i])
             if (i < arr2.length) newArr.push(arr2[i])
