@@ -7,13 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const newStr = str.toLowerCase().replace(/[^a-zа-я0-9]/g, '')
-        return newStr === newStr.split('').reverse().join('')
+    function sumUnique(arr) {
+        const newArr = [...new Set(arr)]
+        return newArr.reduce((acc, el) => acc + el, 0)
     }
 
-    console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
-    console.log(isPalindrome("race a car")); // false
+    console.log(sumUnique([1, 2, 2, 3, 4, 4, 5])); // Должно вернуть 15 (1+2+3+4+5)
 </script>
 </body>
 </html>
