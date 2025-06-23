@@ -8,9 +8,8 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
     function sumEvenNumbers(arr) {
-        const newArr = arr.filter(el => el % 2 === 0)
 
-        return newArr.reduce((acc, el) => acc + el, 0)
+        return arr.filter(el => el % 2 === 0).reduce((acc, el) => acc + el, 0)
     }
 
     console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6])); // 12 (2 + 4 + 6)
