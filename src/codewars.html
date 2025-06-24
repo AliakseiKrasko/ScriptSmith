@@ -7,33 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function groupByProperty(arr, prop) {
-        return arr.reduce((acc, obj) => {
-            const key = obj[prop];
-            if (!acc[key]) acc[key] = [];
-            acc[key].push(obj);
-            return acc;
-        }, {});
+    function sumArray(arr) {
+        return arr.reduce((acc, el) => acc + el, 0)
     }
 
-    const users = [
-        { id: 1, name: 'Alice', age: 25 },
-        { id: 2, name: 'Bob', age: 30 },
-        { id: 3, name: 'Charlie', age: 25 }
-    ];
-
-    console.log(groupByProperty(users, 'age'));
-    /* Должно вернуть:
-    {
-      25: [
-        { id: 1, name: 'Alice', age: 25 },
-        { id: 3, name: 'Charlie', age: 25 }
-      ],
-      30: [
-        { id: 2, name: 'Bob', age: 30 }
-      ]
-    }
-    */
+    console.log(sumArray([1, 2, 3, 4]))
 </script>
 </body>
 </html>
