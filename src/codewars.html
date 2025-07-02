@@ -7,15 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function reverseArray(arr) {
-        const newArr = []
-        for (let i = arr.length - 1; i >= 0; i--) {
-                newArr.push(arr[i])
-        }
-      return newArr
+    function findCommon(arr1, arr2) {
+      return arr1.filter(el => arr2.includes(el))
     }
 
-    console.log(reverseArray([1, 2, 3]))
+    console.log(findCommon([1, 2, 3], [2, 3, 4]))
 </script>
 </body>
 </html>
