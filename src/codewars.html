@@ -7,17 +7,15 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function getUnique(arr) {
+    function reverseArray(arr) {
         const newArr = []
-        for (let i = 0; i < arr.length; i++) {
-            if (!newArr.includes(arr[i])) {
+        for (let i = arr.length - 1; i >= 0; i--) {
                 newArr.push(arr[i])
-            }
         }
       return newArr
     }
 
-    console.log(getUnique([1, 2, 2, 3, 4, 4]))
+    console.log(reverseArray([1, 2, 3]))
 </script>
 </body>
 </html>
