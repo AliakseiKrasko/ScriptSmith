@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function findMaxValue(obj) {
-        return Math.max(...Object.values(obj));
+    function mergeObjects(obj1, obj2) {
+        return { ...obj1, ...obj2 };
     }
 
-    console.log(findMaxValue({ a: 10, b: 5, c: 20 }))
+    console.log(mergeObjects({ a: 1, b: 2 }, { b: 3, c: 4 }))
 </script>
 </body>
 </html>
