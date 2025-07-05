@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countProps(obj) {
-        return Object.keys(obj).length;
+    function findMaxValue(obj) {
+        return Math.max(...Object.values(obj));
     }
 
-    console.log(countProps({ a: 1, b: 2, c: 3 }))
+    console.log(findMaxValue({ a: 10, b: 5, c: 20 }))
 </script>
 </body>
 </html>
