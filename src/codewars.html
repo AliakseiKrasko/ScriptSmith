@@ -7,20 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function groupByLength(words) {
-        const newArr = {}
-      for (let i = 0; i < words.length; i++) {
-          const word = words[i]
-          let length = word.length
-          if (!newArr[length]) {
-            newArr[length] = []
-          }
-          newArr[length].push(word)
-      }
-      return newArr
+    function countProps(obj) {
+        return Object.keys(obj).length;
     }
 
-    console.log(groupByLength(['apple', 'cat', 'dog', 'banana']))
+    console.log(countProps({ a: 1, b: 2, c: 3 }))
 </script>
 </body>
 </html>
