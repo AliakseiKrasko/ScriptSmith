@@ -7,11 +7,13 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function mergeObjects(obj1, obj2) {
-        return { ...obj1, ...obj2 };
+    function filterObject(obj, callback) {
+        return Object.fromEntries(
+            Object.entries(obj).filter(([key, value]) => callback(value))
+        );
     }
 
-    console.log(mergeObjects({ a: 1, b: 2 }, { b: 3, c: 4 }))
+    console.log(filterObject({ a: 1, b: 2, c: 3 }, x => x > 1))
 </script>
 </body>
 </html>
