@@ -7,11 +7,17 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms))
-        }
+    function firstTask(x) {
+        return Promise.resolve(x * 2);
+    }
+    function secondTask(y) {
+        return Promise.resolve(y * 5);
+    }
+    firstTask(5).then(secondTask).then(console.log);
 
-        delay(5000).then(() => console.log('Done!')); // Через 1 секунду: "Done!"
+    firstTask(5)
+        .then(result => secondTask(result))
+        .then(final => console.log(final)); // → 50 (5 * 2 → 10 * 5)
 </script>
 </body>
 </html>
