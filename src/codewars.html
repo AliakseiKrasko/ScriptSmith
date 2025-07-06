@@ -7,21 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function deepClone(obj) {
-        // Или с рекурсией для сложных случаев:
-        function deepClone(obj) {
-            if (typeof obj !== 'object' || obj === null) return obj;
-            const clone = Array.isArray(obj) ? [] : {};
-            for (const key in obj) {
-                clone[key] = deepClone(obj[key]);
-            }
-            return clone;
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms))
         }
 
-    const obj = { a: 1, b: { c: 2 } };
-    const cloned = deepClone(obj);
-    obj.b.c = 99;
-    console.log(cloned.b.c); // → 2 (не изменилось)
+        delay(5000).then(() => console.log('Done!')); // Через 1 секунду: "Done!"
 </script>
 </body>
 </html>
