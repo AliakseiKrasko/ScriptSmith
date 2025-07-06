@@ -7,13 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function simulateError() {
-        return Promise.reject(new Error('Something went wrong'));
+    function fetchAll(urls) {
+        const promises = urls.map(url => fetch(url).then(res => res.json()));
+        return Promise.all(promises);
     }
 
 
-    simulateError()
-        .catch(err => console.error('Error:', err.message)); // → "Error: Something went wrong"
+    const urls = ['/api/data1', '/api/data2', '/api/data3'];
+    fetchAll(urls).then(results => console.log(results)); // → [data1, data2, data3]
 </script>
 </body>
 </html>
