@@ -7,21 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function retry(fn, attempts) {
+    function promiseRace(promises) {
         return new Promise((resolve, reject) => {
-            fn()
-                .then(resolve)
-                .catch(err => {
-                    if (attempts <= 1) return reject(err);
-                    retry(fn, attempts - 1).then(resolve, reject);
-                });
+            promises.forEach(p => p.then(resolve, reject));
         });
     }
-
-
-    retry(() => fetchData(), 3)
-        .then(data => console.log(data))
-        .catch(err => console.log('Failed after 3 attempts'));
+    promiseRace([delay(100), delay(200)]).then(result => console.log(result));
 </script>
 </body>
 </html>
