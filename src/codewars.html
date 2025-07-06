@@ -7,17 +7,13 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function firstTask(x) {
-        return Promise.resolve(x * 2);
+    function simulateError() {
+        return Promise.reject(new Error('Something went wrong'));
     }
-    function secondTask(y) {
-        return Promise.resolve(y * 5);
-    }
-    firstTask(5).then(secondTask).then(console.log);
 
-    firstTask(5)
-        .then(result => secondTask(result))
-        .then(final => console.log(final)); // → 50 (5 * 2 → 10 * 5)
+
+    simulateError()
+        .catch(err => console.error('Error:', err.message)); // → "Error: Something went wrong"
 </script>
 </body>
 </html>
