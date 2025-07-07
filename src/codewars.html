@@ -7,22 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function longestChar(str) {
-        let maxChar = '';
-        let maxCount = 0;
-        let currentCount = 0;
-
-        for (let i = 0; i < str.length; i++) {
-            currentCount = (str[i] === str[i - 1]) ? currentCount + 1 : 1;
-            if (currentCount > maxCount) {
-                maxCount = currentCount;
-                maxChar = str[i];
-            }
-        }
-        return { char: maxChar, count: maxCount };
+    function countVowels(str) {
+        const vowels = 'аеёиоуыэюяaeiouy';
+        return [...str.toLowerCase()].filter(c => vowels.includes(c)).length;
     }
 
-    console.log(longestChar("aabbccccdde"))
+    console.log(countVowels("Привет, World!"))
 
 </script>
 </body>
