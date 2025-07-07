@@ -7,22 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function rleEncode(str) {
-        let result = '';
-        let count = 1;
-
-        for (let i = 0; i < str.length; i++) {
-            if (str[i] === str[i + 1]) {
-                count++;
-            } else {
-                result += str[i] + (count > 1 ? count : '');
-                count = 1;
-            }
-        }
-        return result;
+    function countWords(str) {
+        return str.trim().split(/\s+/).filter(Boolean).length;
     }
 
-    console.log(rleEncode("AAABBBCCXYZ"))
+    console.log(countWords(" Hello,  world! "))
 
 </script>
 </body>
