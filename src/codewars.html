@@ -7,12 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countVowels(str) {
-        const vowels = 'аеёиоуыэюяaeiouy';
-        return [...str.toLowerCase()].filter(c => vowels.includes(c)).length;
+    function formatPhone(phone) {
+        return phone.replace(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/, '+$1 ($2) $3-$4-$5');
     }
 
-    console.log(countVowels("Привет, World!"))
+    console.log(formatPhone("79991234567"))
 
 </script>
 </body>
