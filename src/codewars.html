@@ -7,12 +7,13 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function promiseRace(promises) {
-        return new Promise((resolve, reject) => {
-            promises.forEach(p => p.then(resolve, reject));
-        });
+    function isPalindrome(str) {
+        const cleaned = str.toLowerCase().replace(/[^а-яa-z]/g, '');
+        return cleaned === cleaned.split('').reverse().join('');
     }
-    promiseRace([delay(100), delay(200)]).then(result => console.log(result));
+
+    console.log(isPalindrome("А роза упала на лапу Азора")) // → true
+    console.log(isPalindrome("JavaScript"))  // → false)
 </script>
 </body>
 </html>
