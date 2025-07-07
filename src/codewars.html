@@ -7,13 +7,23 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const cleaned = str.toLowerCase().replace(/[^а-яa-z]/g, '');
-        return cleaned === cleaned.split('').reverse().join('');
+    function longestChar(str) {
+        let maxChar = '';
+        let maxCount = 0;
+        let currentCount = 0;
+
+        for (let i = 0; i < str.length; i++) {
+            currentCount = (str[i] === str[i - 1]) ? currentCount + 1 : 1;
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+                maxChar = str[i];
+            }
+        }
+        return { char: maxChar, count: maxCount };
     }
 
-    console.log(isPalindrome("А роза упала на лапу Азора")) // → true
-    console.log(isPalindrome("JavaScript"))  // → false)
+    console.log(longestChar("aabbccccdde"))
+
 </script>
 </body>
 </html>
