@@ -7,11 +7,22 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function formatPhone(phone) {
-        return phone.replace(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/, '+$1 ($2) $3-$4-$5');
+    function rleEncode(str) {
+        let result = '';
+        let count = 1;
+
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i + 1]) {
+                count++;
+            } else {
+                result += str[i] + (count > 1 ? count : '');
+                count = 1;
+            }
+        }
+        return result;
     }
 
-    console.log(formatPhone("79991234567"))
+    console.log(rleEncode("AAABBBCCXYZ"))
 
 </script>
 </body>
