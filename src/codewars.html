@@ -7,13 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+    function caesarCipher(str, shift) {
+        return str.replace(/[a-z]/gi, c => {
+            const base = c < 'a' ? 65 : 97;
+            return String.fromCharCode(
+                ((c.charCodeAt(0) - base + shift) % 26 + base
+                );
+        });
     }
 
-    console.log(isValidEmail("test@example.com")); // true
-    console.log(isValidEmail("invalid.email@")); // false
+    console.log(caesarCipher("Hello", 3)); // "Khoor"
+    console.log(caesarCipher("Khoor", -3)); // "Hello"
+
 
 </script>
 </body>
