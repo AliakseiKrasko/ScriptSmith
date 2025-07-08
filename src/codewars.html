@@ -7,18 +7,16 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function findLongestWord(str) {
-        const words = str.split(' ')
-        let count = 0
-        for (word of words) {
-            if (word.length > count){
-                count = word.length
-            }
+    function generateRandomString(length) {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
         }
-        return count
+        return result;
     }
 
-    console.log(findLongestWord("The quick brown fox jumped")); // 6
+    console.log(generateRandomString(8)); // Например: "X8fK92jL"
 
 </script>
 </body>
