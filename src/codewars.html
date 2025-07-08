@@ -7,22 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countLetters(str) {
-        const vowels = 'aeiouAEIOU';
-        let vowelCount = 0;
-        let consonantCount = 0;
-
-        for (const char of str) {
-            if (/[a-z]/i.test(char)) {
-                vowels.includes(char) ? vowelCount++ : consonantCount++;
-            }
-        }
-
-        return { vowels: vowelCount, consonants: consonantCount };
+    function sumArray(arr) {
+        return arr.reduce((acc, el) => acc + el, 0)
     }
 
-    console.log(countLetters("Hello World!"));
-    // { vowels: 3, consonants: 7 }
+    console.log(sumArray([1, 2, 3, 4])); // → 10);
+
 
 
 </script>
