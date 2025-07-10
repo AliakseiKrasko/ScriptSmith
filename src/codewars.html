@@ -7,14 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function charFrequency(str) {
-        return [...str].reduce((acc, char) => {
-            acc[char] = (acc[char] || 0) + 1;
-            return acc;
-        }, {});
+    function sumArray(arr) {
+        return arr.reduce((acc, el) => acc + el, 0)
     }
 
-    console.log(charFrequency("aabbbcc")); // → 10);
+    console.log(sumArray([1, 2, 3, 4])); // 10
+    console.log(sumArray([-1, 0, 1]));    // 0
 
 
 
