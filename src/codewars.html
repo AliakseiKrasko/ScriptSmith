@@ -7,18 +7,15 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function User(name) {
-        if (!new.target) {
-            return new User(name)
-        }
-        this.name = name;
-    }
+    const shop = {
+        product: 'Book',
+        getProduct: function() { return this.product; },
+        getProductArrow: function() { return this.product }// window/undefined
+    };
 
-    const alice = new User('Alice'); // { name: 'Alice' }
-    const bob = User('Bob'); // Ошибка: this — undefined (в strict mode)
-    console.log(bob); // undefined
-
-    // Как сделать, чтобы User работал и с new, и без?
+    console.log(shop.getProduct()); // 'Book'
+    console.log(shop.getProductArrow()); // undefined (почему?)
+    // Как исправить getProductArrow?
 
 
 
