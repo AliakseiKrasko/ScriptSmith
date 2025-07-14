@@ -7,16 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const user = {
-        name: 'Alice',
-        greet: function() {
-            console.log(`Hello, ${this.name}!`);
+    const timer = {
+        seconds: 0,
+        start: function() {
+            setInterval(() => {
+                this.seconds++; // Ошибка: this.seconds — undefined
+                console.log(this.seconds);
+            }, 1000);
         }
     };
 
-    const greetFunc = user.greet.bind(user);
-    greetFunc(); // Выводит: "Hello, undefined!" (почему?)
-    // Как исправить, чтобы выводило "Hello, Alice!"?
+    // timer.start(); // Почему не работает?
+    // Как исправить, чтобы счётчик увеличивался?
 
 
 
