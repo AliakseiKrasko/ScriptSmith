@@ -7,16 +7,19 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const shop = {
-        product: 'Book',
-        getProduct: function() { return this.product; },
-        getProductArrow: function() { return this.product }// window/undefined
+    function Animal(name) {
+        this.name = name;
+    }
+
+    Animal.prototype.sayName = function() {
+        console.log(this.name);
     };
 
-    console.log(shop.getProduct()); // 'Book'
-    console.log(shop.getProductArrow()); // undefined (почему?)
-    // Как исправить getProductArrow?
+    const cat = new Animal('Whiskers');
+    const dog = { name: 'Rex' };
 
+    // Как вызвать sayName с контекстом dog?
+    cat.sayName.call(dog);
 
 
 
