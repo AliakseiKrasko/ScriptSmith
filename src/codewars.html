@@ -7,20 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function Animal(name) {
-        this.name = name;
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms))
     }
 
-    Animal.prototype.sayName = function() {
-        console.log(this.name);
-    };
-
-    const cat = new Animal('Whiskers');
-    const dog = { name: 'Rex' };
-
-    // Как вызвать sayName с контекстом dog?
-    cat.sayName.call(dog);
-
+    delay(1000).then(() => console.log("Hello after 1 second"));
+    // Через 1 секунду выведет: "Hello after 1 second"
 
 
 </script>
