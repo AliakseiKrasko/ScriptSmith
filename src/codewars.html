@@ -7,13 +7,30 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms))
+    function step1() {
+        return Promise.resolve("Step 1 completed");
+    }
+    function step2() {
+        return Promise.resolve("Step 2 completed");
+    }
+    function step3() {
+        return Promise.resolve("Step 3 completed");
     }
 
-    delay(1000).then(() => console.log("Hello after 1 second"));
-    // Через 1 секунду выведет: "Hello after 1 second"
+    function sequence() {
+        return step1()
+            .then(console.log)
+            .then(step2)
+            .then(console.log)
+            .then(step3)
+            .then(console.log);
+    }
 
+    sequence();
+    // Должно вывести:
+    // "Step 1 completed"
+    // "Step 2 completed"
+    // "Step 3 completed"
 
 </script>
 </body>
