@@ -7,28 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function timeoutPromise(promise, ms) {
-        return new Promise((resolve, reject) => {
-            const timeoutId = setTimeout(() => reject("Timeout"), ms);
-            promise
-                .then(resolve)
-                .catch(reject)
-                .finally(() => clearTimeout(timeoutId));
-        });
+    async function asyncMap(arr, asyncFn) {
+        return Promise.all(arr.map(asyncFn));
     }
 
-    const slowPromise = new Promise(resolve =>
-        setTimeout(() => resolve("Slow resolved"), 2000)
-    );
+    const numbers = [1, 2, 3];
+    const asyncSquare = num => Promise.resolve(num * num);
 
-    timeoutPromise(slowPromise, 1000)
-        .then(console.log)
-        .catch(err => console.error(err)); // "Timeout"
-
-    timeoutPromise(slowPromise, 3000)
-        .then(console.log) // "Slow resolved"
-        .catch(console.error);
-
+    asyncMap(numbers, asyncSquare).then(console.log); // [1, 4, 9]
 
 </script>
 </body>
