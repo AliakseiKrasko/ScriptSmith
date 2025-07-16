@@ -7,23 +7,27 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function fetchUser() {
-        return Promise.resolve({ name: "Alice" });
-    }
-    function fetchPosts() {
-        return Promise.resolve(["Post 1", "Post 2"]);
-    }
-    function fetchComments() {
-        return Promise.resolve(["Comment 1"]);
-    }
-
-    function fetchAllData() {
-        return Promise.all([fetchUser(), fetchPosts(), fetchComments()]);
+    function timeoutPromise(promise, ms) {
+        return new Promise((resolve, reject) => {
+            const timeoutId = setTimeout(() => reject("Timeout"), ms);
+            promise
+                .then(resolve)
+                .catch(reject)
+                .finally(() => clearTimeout(timeoutId));
+        });
     }
 
-    fetchAllData().then(console.log);
-    // Должно вывести:
-    // [ { name: "Alice" }, ["Post 1", "Post 2"], ["Comment 1"] ]
+    const slowPromise = new Promise(resolve =>
+        setTimeout(() => resolve("Slow resolved"), 2000)
+    );
+
+    timeoutPromise(slowPromise, 1000)
+        .then(console.log)
+        .catch(err => console.error(err)); // "Timeout"
+
+    timeoutPromise(slowPromise, 3000)
+        .then(console.log) // "Slow resolved"
+        .catch(console.error);
 
 
 </script>
