@@ -7,14 +7,21 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const newStr = str.replace(/\s+/g, "").toLowerCase()
-        return newStr === newStr.split('').reverse().join('')
+    function countVowels(str) {
+        const vowels = ['a', 'e', 'i', 'o', 'u'];
+        let count = [];
+
+        for (let char of str.toLowerCase()) {
+            if (vowels.includes(char)) {
+                count.push(char);
+            }
+        }
+
+        return count;
     }
 
-    console.log(isPalindrome("топот")); // true
-    console.log(isPalindrome("hello")); // false
-    console.log(isPalindrome("А роза упала на лапу Азора")); // true (игнорируем пробелы и регистр)
+    console.log(countVowels("Hello World")); // 3 (e, o, o)
+    console.log(countVowels("JavaScript")); // 3 (a, a, i)
 
 </script>
 </body>
