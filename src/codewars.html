@@ -7,14 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    async function asyncMap(arr, asyncFn) {
-        return Promise.all(arr.map(asyncFn));
+    function reverseString(str) {
+        return str.split('').reverse().join('')
     }
 
-    const numbers = [1, 2, 3];
-    const asyncSquare = num => Promise.resolve(num * num);
-
-    asyncMap(numbers, asyncSquare).then(console.log); // [1, 4, 9]
+    console.log(reverseString("hello")); // "olleh"
+    console.log(reverseString("12345")); // "54321"
 
 </script>
 </body>
