@@ -7,21 +7,21 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countVowels(str) {
-        const vowels = ['a', 'e', 'i', 'o', 'u'];
-        let count = [];
+    function longestWord(str) {
+        const words = str.replace(/[.,!?]/g, '').split(' ');
 
-        for (let char of str.toLowerCase()) {
-            if (vowels.includes(char)) {
-                count.push(char);
+        let longest = '';
+        for (const word of words) {
+            if (word.length > longest.length) {
+                longest = word;
             }
         }
 
-        return count;
+        return longest;
     }
 
-    console.log(countVowels("Hello World")); // 3 (e, o, o)
-    console.log(countVowels("JavaScript")); // 3 (a, a, i)
+    console.log(longestWord("Hello world, this is JavaScript")); // "JavaScript"
+    console.log(longestWord("Привет, как дела?")); // "Привет"
 
 </script>
 </body>
