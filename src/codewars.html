@@ -7,22 +7,12 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function longestWord(str) {
-        const words = str.replace(/[.,!?]/g, '').split(' ');
-
-        let longest = '';
-        for (const word of words) {
-            if (word.length > longest.length) {
-                longest = word;
-            }
-        }
-
-        return longest;
+    function sumArray(arr) {
+        return arr.reduce((acc, el) => acc + el, 0)
     }
 
-    console.log(longestWord("Hello world, this is JavaScript")); // "JavaScript"
-    console.log(longestWord("Привет, как дела?")); // "Привет"
-
+    console.log(sumArray([1, 2, 3, 4])); // 10
+    console.log(sumArray([-5, 10, 3]));  // 8
 </script>
 </body>
 </html>
