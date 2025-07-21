@@ -7,13 +7,17 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function chunkArray(arr) {
-        return arr.reduce((acc, el) => acc + el, 0);
+    function findMinMax(arr) {
+        return {
+            max: Math.max(...arr),
+            min: Math.min(...arr)
+        };
     }
 
 
-    console.log(chunkArray([1, 2, 3, 4, 5], 2)); // [[1, 2], [3, 4], [5]]
-    console.log(chunkArray(['a', 'b', 'c', 'd'], 3)); // [['a', 'b', 'c'], ['d']]
+    findMinMax([5, 2, 9, 1, 7]) // → { max: 9, min: 1 }
+    findMinMax([-3, -10, 0])    // → { max: 0, min: -10 }
+
 
 </script>
 </body>
