@@ -7,25 +7,28 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const user = {
-        name: "John",
-        age: 30,
-        isAdmin: false
+    const car = {
+        brand: "Toyota",
+        model: "Camry",
+        year: 2020,
+        color: "black"
     };
 
-    // 1. Добавляем свойство city
-    user.city = "New York";
+    // Вариант 1: for..in
+    for (const key in car) {
+        console.log(`${key}: ${car[key]}`);
+    }
 
-    // 2. Меняем возраст
-    user.age = 35;
+    // Вариант 2: Object.entries + forEach
+    Object.entries(car).forEach(([key, value]) => {
+        console.log(`${key}: ${value}`);
+    });
 
-    // 3. Удаляем isAdmin
-    delete user.isAdmin;
-
-    // 4. Выводим объект
-    console.log(user);
-    // { name: 'John', age: 35, city: 'New York' }
-
+    // Вывод:
+    // brand: Toyota
+    // model: Camry
+    // year: 2020
+    // color: black
 </script>
 </body>
 </html>
