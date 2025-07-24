@@ -7,28 +7,19 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    // Вариант 1: JSON (не поддерживает функции и сложные типы вроде Date)
-    function cloneObject(obj) {
-        return JSON.parse(JSON.stringify(obj));
+    // Вариант 1: Spread-оператор
+    function mergeObjects(obj1, obj2) {
+        return { ...obj1, ...obj2 };
     }
 
-    // Вариант 2: Рекурсивное копирование (универсальное)
-    function cloneObject(obj) {
-        if (obj === null || typeof obj !== "object") {
-            return obj;
-        }
-        const clone = Array.isArray(obj) ? [] : {};
-        for (const key in obj) {
-            clone[key] = cloneObject(obj[key]);
-        }
-        return clone;
+    // Вариант 2: Object.assign
+    function mergeObjects(obj1, obj2) {
+        return Object.assign({}, obj1, obj2);
     }
 
-    const original = { a: 1, b: { c: 2 } };
-    const cloned = cloneObject(original);
-
-    cloned.b.c = 99;
-    console.log(original.b.c); // 2 (не изменилось)
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { b: 3, c: 4 };
+    console.log(mergeObjects(obj1, obj2)); // { a: 1, b: 3, c: 4 }
 </script>
 </body>
 </html>
