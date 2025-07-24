@@ -7,17 +7,24 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function findMinMax(arr) {
-        return {
-            max: Math.max(...arr),
-            min: Math.min(...arr)
-        };
-    }
+    const user = {
+        name: "John",
+        age: 30,
+        isAdmin: false
+    };
 
+    // 1. Добавляем свойство city
+    user.city = "New York";
 
-    findMinMax([5, 2, 9, 1, 7]) // → { max: 9, min: 1 }
-    findMinMax([-3, -10, 0])    // → { max: 0, min: -10 }
+    // 2. Меняем возраст
+    user.age = 35;
 
+    // 3. Удаляем isAdmin
+    delete user.isAdmin;
+
+    // 4. Выводим объект
+    console.log(user);
+    // { name: 'John', age: 35, city: 'New York' }
 
 </script>
 </body>
