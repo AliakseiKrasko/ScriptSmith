@@ -7,13 +7,28 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function hasProperty(obj, prop) {
-        return prop in obj; // или obj.hasOwnProperty(prop), если не учитывать прототип
+    // Вариант 1: JSON (не поддерживает функции и сложные типы вроде Date)
+    function cloneObject(obj) {
+        return JSON.parse(JSON.stringify(obj));
     }
 
-    const book = { title: "1984", author: "George Orwell" };
-    console.log(hasProperty(book, "title")); // true
-    console.log(hasProperty(book, "pages")); // false
+    // Вариант 2: Рекурсивное копирование (универсальное)
+    function cloneObject(obj) {
+        if (obj === null || typeof obj !== "object") {
+            return obj;
+        }
+        const clone = Array.isArray(obj) ? [] : {};
+        for (const key in obj) {
+            clone[key] = cloneObject(obj[key]);
+        }
+        return clone;
+    }
+
+    const original = { a: 1, b: { c: 2 } };
+    const cloned = cloneObject(original);
+
+    cloned.b.c = 99;
+    console.log(original.b.c); // 2 (не изменилось)
 </script>
 </body>
 </html>
