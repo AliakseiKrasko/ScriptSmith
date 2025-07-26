@@ -7,15 +7,19 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function shortToLong(arr) {
-        return arr.sort((a, b) => a.length - b.length)
-    }
-    function longToShort(arr) {
-        return arr.sort((a, b) => b.length - a.length)
-    }
-    console.log(shortToLong(["apple", "banana", "kiwi", "orange", "grape"]));  // ["kiwi", "apple", "grape", "banana", "orange"]
-    console.log(longToShort(["apple", "banana", "kiwi", "orange", "grape"]));  // ["orange", "banana", "apple", "grape", "kiwi"]
+    function sortedEvenOdd(arr) {
+        return [...arr].sort((a, b) => {
+            if (a % 2 === 0 && b % 2 !== 0) return -1; // a чётное, b нечётное - a идёт первым
+            if (a % 2 !== 0 && b % 2 === 0) return 1;  // a нечётное, b чётное - b идёт первым
 
+            return a - b;
+        });
+    }
+
+    const numbers = [10, 21, 4, 15, 7, 99, 0];
+    const result = sortedEvenOdd(numbers);
+    console.log(result); // [0, 4, 10, 7, 15, 21, 99]
+    console.log(numbers); // Исходный массив не изменился: [10, 21, 4, 15, 7, 99, 0]
 </script>
 </body>
 </html>
