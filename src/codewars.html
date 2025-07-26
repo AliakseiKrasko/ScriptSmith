@@ -7,19 +7,23 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function sortedEvenOdd(arr) {
-        return [...arr].sort((a, b) => {
-            if (a % 2 === 0 && b % 2 !== 0) return -1; // a чётное, b нечётное - a идёт первым
-            if (a % 2 !== 0 && b % 2 === 0) return 1;  // a нечётное, b чётное - b идёт первым
+    const products = [
+        { name: "Laptop", price: 1000, rating: 4.5 },
+        { name: "Phone", price: 800, rating: 4.7 },
+        { name: "Tablet", price: 500, rating: 4.2 },
+        { name: "Monitor", price: 500, rating: 4.8 }
+    ];
 
-            return a - b;
-        });
-    }
+    const sortedProducts = [...products].sort((a, b) => {
+        // Сначала сравниваем цену
+        if (a.price !== b.price) {
+            return a.price - b.price; // по возрастанию цены
+        }
+        // Если цены равны - сравниваем рейтинг
+        return b.rating - a.rating; // по убыванию рейтинга
+    });
 
-    const numbers = [10, 21, 4, 15, 7, 99, 0];
-    const result = sortedEvenOdd(numbers);
-    console.log(result); // [0, 4, 10, 7, 15, 21, 99]
-    console.log(numbers); // Исходный массив не изменился: [10, 21, 4, 15, 7, 99, 0]
+    console.log(sortedProducts);
 </script>
 </body>
 </html>
