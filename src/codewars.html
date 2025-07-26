@@ -7,19 +7,15 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    // Вариант 1: Spread-оператор
-    function mergeObjects(obj1, obj2) {
-        return { ...obj1, ...obj2 };
+    function sortedAsc(arr) {
+        return arr.sort((a, b) => a - b)
     }
-
-    // Вариант 2: Object.assign
-    function mergeObjects(obj1, obj2) {
-        return Object.assign({}, obj1, obj2);
+    function sortedDesc(arr) {
+        return arr.sort((a, b) => b - a)
     }
+    console.log(sortedAsc([5, 2, 9, 1, 5, 6]));  // [1, 2, 5, 5, 6, 9]
+    console.log(sortedDesc([5, 2, 9, 1, 5, 6])); // [9, 6, 5, 5, 2, 1]
 
-    const obj1 = { a: 1, b: 2 };
-    const obj2 = { b: 3, c: 4 };
-    console.log(mergeObjects(obj1, obj2)); // { a: 1, b: 3, c: 4 }
 </script>
 </body>
 </html>
