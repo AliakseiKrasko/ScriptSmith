@@ -7,23 +7,20 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const products = [
-        { name: "Laptop", price: 1000, rating: 4.5 },
-        { name: "Phone", price: 800, rating: 4.7 },
-        { name: "Tablet", price: 500, rating: 4.2 },
-        { name: "Monitor", price: 500, rating: 4.8 }
-    ];
-
-    const sortedProducts = [...products].sort((a, b) => {
-        // Сначала сравниваем цену
-        if (a.price !== b.price) {
-            return a.price - b.price; // по возрастанию цены
+    function bubbleSort(arr) {
+        const newArr = [...arr]
+        for (let i = 0; i < newArr.length - 1; i++) {
+            for (let j = 0; j < newArr.length - i - 1; j++) {
+                if (newArr[j] > newArr[j + 1]) {
+                    [newArr[j], newArr[j + 1]] = [newArr[j + 1], newArr[j]]
+                }
+            }
         }
-        // Если цены равны - сравниваем рейтинг
-        return b.rating - a.rating; // по убыванию рейтинга
-    });
+        return newArr
+    }
 
-    console.log(sortedProducts);
+    console.log(bubbleSort([5, 3, 8, 1, 2])); // [1, 2, 3, 5, 8]
+
 </script>
 </body>
 </html>
