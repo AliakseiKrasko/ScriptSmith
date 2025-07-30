@@ -7,20 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function transformKeys(obj, callback) {
-        const newObj = {};
-        for (const key in obj) {
-            if (obj.hasOwnProperty(key)) {
-                const newKey = callback(key);
-                newObj[newKey] = obj[key];
-            }
-        }
-        return newObj;
+    function countProperties(obj) {
+        return Object.keys(obj).length;
     }
 
-    const user = { firstName: "John", lastName: "Doe" };
-    const result = transformKeys(user, key => key.toUpperCase());
-    console.log(result); // { FIRSTNAME: "John", LASTNAME: "Doe" }
+
+    const car = { brand: "Toyota", model: "Camry" };
+    console.log(countProperties(car)); // 2
+
 
 </script>
 </body>
