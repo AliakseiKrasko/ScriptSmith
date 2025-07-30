@@ -7,19 +7,20 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function bubbleSort(arr) {
-        const newArr = [...arr]
-        for (let i = 0; i < newArr.length - 1; i++) {
-            for (let j = 0; j < newArr.length - i - 1; j++) {
-                if (newArr[j] > newArr[j + 1]) {
-                    [newArr[j], newArr[j + 1]] = [newArr[j + 1], newArr[j]]
-                }
+    function transformKeys(obj, callback) {
+        const newObj = {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                const newKey = callback(key);
+                newObj[newKey] = obj[key];
             }
         }
-        return newArr
+        return newObj;
     }
 
-    console.log(bubbleSort([5, 3, 8, 1, 2])); // [1, 2, 3, 5, 8]
+    const user = { firstName: "John", lastName: "Doe" };
+    const result = transformKeys(user, key => key.toUpperCase());
+    console.log(result); // { FIRSTNAME: "John", LASTNAME: "Doe" }
 
 </script>
 </body>
