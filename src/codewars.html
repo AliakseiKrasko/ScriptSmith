@@ -7,19 +7,28 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function addProperty(obj, key, value) {
-        if (!obj.hasOwnProperty(key)) {
-            obj[key] = value;
-        }
-    }
+    const person = {
+        name: "Alice",
+        age: 25,
+        city: "London"
+    };
 
-    const book = { title: "1984" };
-    addProperty(book, "author", "George Orwell");
-    console.log(book); // { title: "1984", author: "George Orwell" }
+    // 1. Добавляем свойство country
+    person.country = "UK";
 
-    addProperty(book, "title", "New Title");
-    console.log(book); // { title: "1984", author: "George Orwell" }
+    // 2. Меняем значение city
+    person.city = "Paris";
 
+    // 3. Удаляем свойство age
+    delete person.age;
+
+    // 4. Проверяем наличие свойства name
+    const hasName = "name" in person;
+
+    // Проверяем результат:
+    console.log(person);
+    // { name: "Alice", city: "Paris", country: "UK" }
+    console.log(hasName); // true
 </script>
 </body>
 </html>
