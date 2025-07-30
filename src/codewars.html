@@ -7,14 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function countProperties(obj) {
-        return Object.keys(obj).length;
+    function addProperty(obj, key, value) {
+        if (!obj.hasOwnProperty(key)) {
+            obj[key] = value;
+        }
     }
 
+    const book = { title: "1984" };
+    addProperty(book, "author", "George Orwell");
+    console.log(book); // { title: "1984", author: "George Orwell" }
 
-    const car = { brand: "Toyota", model: "Camry" };
-    console.log(countProperties(car)); // 2
-
+    addProperty(book, "title", "New Title");
+    console.log(book); // { title: "1984", author: "George Orwell" }
 
 </script>
 </body>
