@@ -7,15 +7,13 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function sumDigits(num) {
-        return String(num)
-            .split("")
-            .reduce((sum, digit) => sum + Number(digit), 0);
+    function isPalindrome(str) {
+        const cleanedStr = str.toLowerCase().replace(/\s/g, "");
+        return cleanedStr === cleanedStr.split("").reverse().join("");
     }
 
-    console.log(sumDigits(123)); // 6 (1 + 2 + 3)
-    console.log(sumDigits(9045)); // 18 (9 + 0 + 4 + 5)
-
+    console.log(isPalindrome("А роза упала на лапу Азора")); // true
+    console.log(isPalindrome("JavaScript")); // false
 </script>
 </body>
 </html>
