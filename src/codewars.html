@@ -7,13 +7,13 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function convertToNumber(str) {
-        return Number(str); // или +str, или parseFloat(str)
+    function isInteger(num) {
+        return typeof num === "number" && Number.isInteger(num);
     }
 
-    console.log(convertToNumber("123")); // 123
-    console.log(convertToNumber("3.14")); // 3.14
-    console.log(convertToNumber("abc")); // NaN
+    console.log(isInteger(5)); // true
+    console.log(isInteger(5.1)); // false
+    console.log(isInteger("5")); // false (потому что строка)
 
 </script>
 </body>
