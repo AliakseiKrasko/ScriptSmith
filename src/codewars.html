@@ -7,13 +7,13 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isInteger(num) {
-        return typeof num === "number" && Number.isInteger(num);
+    function truncate(str, maxLength) {
+        return str.length > maxLength ? str.slice(0, maxLength - 3) + "..." : str;
     }
 
-    console.log(isInteger(5)); // true
-    console.log(isInteger(5.1)); // false
-    console.log(isInteger("5")); // false (потому что строка)
+
+    console.log(truncate("Вот, что мне хотелось бы сказать:", 10)); // "Вот, что..."
+    console.log(truncate("Коротко", 10)); // "Коротко"
 
 </script>
 </body>
