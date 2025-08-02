@@ -7,28 +7,14 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const person = {
-        name: "Alice",
-        age: 25,
-        city: "London"
-    };
+    function convertToNumber(str) {
+        return Number(str); // или +str, или parseFloat(str)
+    }
 
-    // 1. Добавляем свойство country
-    person.country = "UK";
+    console.log(convertToNumber("123")); // 123
+    console.log(convertToNumber("3.14")); // 3.14
+    console.log(convertToNumber("abc")); // NaN
 
-    // 2. Меняем значение city
-    person.city = "Paris";
-
-    // 3. Удаляем свойство age
-    delete person.age;
-
-    // 4. Проверяем наличие свойства name
-    const hasName = "name" in person;
-
-    // Проверяем результат:
-    console.log(person);
-    // { name: "Alice", city: "Paris", country: "UK" }
-    console.log(hasName); // true
 </script>
 </body>
 </html>
