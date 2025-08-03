@@ -7,22 +7,17 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const students = [
-        { id: 1, name: "Alex", grade: 85 },
-        { id: 2, name: "Sam", grade: 90 },
-        { id: 3, name: "Eva", grade: 78 }
+    const orders = [
+        { id: 1, product: "Laptop", price: 1200 },
+        { id: 2, product: "Mouse", price: 25 },
+        { id: 3, product: "Keyboard", price: 60 }
     ];
 
-    function sortStudents(students) {
-        return students.sort((a, b) => b.grade - a.grade)
+    function totalOrders(orders) {
+        return orders.reduce((acc, el) => acc + el.price, 0)
     }
 
-    console.table(sortStudents(students));
-    // [
-    //   { id: 2, name: "Sam", grade: 90 },
-    //   { id: 1, name: "Alex", grade: 85 },
-    //   { id: 3, name: "Eva", grade: 78 }
-    // ]
+    console.log(totalOrders(orders)); // 1285
 </script>
 </body>
 </html>
