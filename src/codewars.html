@@ -7,13 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function isPalindrome(str) {
-        const cleanedStr = str.toLowerCase().replace(/\s/g, "");
-        return cleanedStr === cleanedStr.split("").reverse().join("");
+    function findUser(users, name) {
+        return users.find(user => user.name === name)
     }
 
-    console.log(isPalindrome("А роза упала на лапу Азора")); // true
-    console.log(isPalindrome("JavaScript")); // false
+    const users = [
+        { id: 1, name: "Alice", age: 25 },
+        { id: 2, name: "Bob", age: 30 },
+        { id: 3, name: "Charlie", age: 35 }
+    ];
+
+    console.log(findUser(users, "Bob")); // { id: 2, name: "Bob", age: 30 }
+    console.log(findUser(users, "Eve")); // undefined
 </script>
 </body>
 </html>
