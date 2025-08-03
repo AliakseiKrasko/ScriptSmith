@@ -7,33 +7,27 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const employees = [
-        { id: 1, name: "Alice", department: "HR" },
-        { id: 2, name: "Bob", department: "IT" },
-        { id: 3, name: "Charlie", department: "HR" },
-        { id: 4, name: "David", department: "IT" }
+    const users = [
+        { id: 1, name: "Alice", email: "alice@example.com" },
+        { id: 2, name: "Bob", email: "bob@example.com" },
+        { id: 3, name: "Alice", email: "alice@example.com" } // Дубликат!
     ];
 
-    function groupByDepartment(arr, property) {
-        return arr.reduce((acc, obj) => {
-            const dep = obj[property]
-            if (!acc[dep]) acc[dep] = []
-            acc[dep].push(obj)
-            return acc
-        }, {})
+    function removeDuplicates(users, property) {
+        const newSet = new Set()
+        return users.filter(user => {
+            if (newSet.has(user[property])) return false
+            newSet.add(user[property])
+            return true
+        })
+
     }
 
-    console.log(groupByDepartment(employees, "department"));
-    // {
-    //   HR: [
-    //     { id: 1, name: "Alice", department: "HR" },
-    //     { id: 3, name: "Charlie", department: "HR" }
-    //   ],
-    //   IT: [
-    //     { id: 2, name: "Bob", department: "IT" },
-    //     { id: 4, name: "David", department: "IT" }
-    //   ]
-    // }
+    console.log(removeDuplicates(users, "email"));
+    // [
+    //   { id: 1, name: "Alice", email: "alice@example.com" },
+    //   { id: 2, name: "Bob", email: "bob@example.com" }
+    // ]
 </script>
 </body>
 </html>
