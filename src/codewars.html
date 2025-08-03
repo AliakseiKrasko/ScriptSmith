@@ -7,18 +7,18 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function findUser(users, name) {
-        return users.find(user => user.name === name)
-    }
-
-    const users = [
-        { id: 1, name: "Alice", age: 25 },
-        { id: 2, name: "Bob", age: 30 },
-        { id: 3, name: "Charlie", age: 35 }
+    const products = [
+        { id: 1, name: "Laptop", price: 1000 },
+        { id: 2, name: "Phone", price: 500 },
+        { id: 3, name: "Tablet", price: 300 }
     ];
 
-    console.log(findUser(users, "Bob")); // { id: 2, name: "Bob", age: 30 }
-    console.log(findUser(users, "Eve")); // undefined
+    function filterExpensive(products, maxPrice) {
+        return products.filter(el => el.price <= maxPrice)
+    }
+
+    console.log(filterExpensive(products, 600));
+    // [{ id: 2, name: "Phone", price: 500 }, { id: 3, name: "Tablet", price: 300 }]
 </script>
 </body>
 </html>
