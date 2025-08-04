@@ -7,11 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+    new Promise(resolve => resolve(5))
+        .then(num => num * 2)
+        .then(num => num - 3)
+        .then(res => console.log("Итоговый результат:", res))
 
-    delay(2000).then(() => console.log("Выполнено через 2 секунды"));
 </script>
 </body>
 </html>
