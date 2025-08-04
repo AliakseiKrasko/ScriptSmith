@@ -7,27 +7,11 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const users = [
-        { id: 1, name: "Alice", email: "alice@example.com" },
-        { id: 2, name: "Bob", email: "bob@example.com" },
-        { id: 3, name: "Alice", email: "alice@example.com" } // Дубликат!
-    ];
-
-    function removeDuplicates(users, property) {
-        const newSet = new Set()
-        return users.filter(user => {
-            if (newSet.has(user[property])) return false
-            newSet.add(user[property])
-            return true
-        })
-
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    console.log(removeDuplicates(users, "email"));
-    // [
-    //   { id: 1, name: "Alice", email: "alice@example.com" },
-    //   { id: 2, name: "Bob", email: "bob@example.com" }
-    // ]
+    delay(2000).then(() => console.log("Выполнено через 2 секунды"));
 </script>
 </body>
 </html>
