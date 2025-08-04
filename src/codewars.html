@@ -7,20 +7,16 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function fetchUser() {
-        return delay(1000).then(() => ({ name: "John" }));
-    }
+    const fastPromise = new Promise(resolve =>
+        setTimeout(() => resolve("Быстрый ответ"), 500)
+    );
 
-    function fetchPosts() {
-        return delay(1500).then(() => ["post1", "post2"]);
-    }
+    const slowPromise = new Promise(resolve =>
+        setTimeout(() => resolve("Медленный ответ"), 2000)
+    );
 
-    function fetchComments() {
-        return delay(2000).then(() => ["comment1"]);
-    }
-
-    Promise.all([fetchUser(), fetchPosts(), fetchComments()])
-        .then(results => console.log(results));
+    Promise.race([fastPromise, slowPromise])
+        .then(result => console.log(result));
 </script>
 </body>
 </html>
