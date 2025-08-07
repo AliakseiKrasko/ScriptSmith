@@ -7,13 +7,24 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const initialPromise = new Promise((resolve) => {
-            setTimeout(() => resolve(10), 1000)
-        })
+    // 1. Сначала определяем функцию delay (если её нет)
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
-        initialPromise
-            .then((num) => num * 2)
-            .then((num) => num + 5)
-            .then(console.log)
+    function fetchUser() {
+        return delay(500).then(() => ({ name: "Alice" }));
+    }
+
+    function fetchPosts() {
+        return delay(1000).then(() => ["Post 1", "Post 2"]);
+    }
+
+    // 2. Добавляем обработку ошибок
+    Promise.all([fetchUser(), fetchPosts()])
+        .then(([user, posts]) => ({ user, posts }))
+        .then(result => console.log(result))  // 3. Явная передача console.log
+        .catch(error => console.error("Error:", error));
+</script>
 </body>
 </html>
