@@ -7,16 +7,17 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    const fastPromise = new Promise(resolve =>
-        setTimeout(() => resolve("Быстрый ответ"), 500)
-    );
+    function loadUserData(userId) {
+        return new Promise((resolve, reject) => {
+                if (typeof userId === "number") {
+                    resolve({ id: 1, name: "John" })
+                } else {
+                    reject("Invalid user ID")
+                }
+            })
+    }
 
-    const slowPromise = new Promise(resolve =>
-        setTimeout(() => resolve("Медленный ответ"), 2000)
-    );
-
-    Promise.race([fastPromise, slowPromise])
-        .then(result => console.log(result));
-</script>
+    loadUserData(1).then(console.log).catch(console.error); // { id: 1, name: "John" }
+    loadUserData("abc").then(console.log).catch(console.error); // "Invalid user ID"</script>
 </body>
 </html>
