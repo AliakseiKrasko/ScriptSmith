@@ -21,15 +21,21 @@
         })
     }
 
-    loadUserData(1)
-        .then(user => {
-            user.isAdmin = false
-            console.log(`Данные для ${user}`)
-        }).catch(error => {
-        console.log(`Ошибка ${error}`)
-    })
+    // loadUserData(1)
+    //     .then(user => {
+    //         user.isAdmin = false
+    //         console.log(`Данные для ${user}`)
+    //     }).catch(error => {
+    //     console.log(`Ошибка ${error}`)
+    // })
 
-    Promise.all([loadUserData])
+    Promise.all([loadUserData(1)], loadUserData(2), loadUserData(3), loadUserData(-2))
+        .then(res => {
+            console.log(`Все пользователи ${res}`)
+        })
+        .catch(err => {
+            console.log(`Ошибка ${err}`)
+        })
 
 </script>
 </body>
