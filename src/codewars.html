@@ -7,32 +7,28 @@
 <body>
 <script>
     //TODO: практика решения задач по нативным javascriptlog
-    function loadUserData(userId) {
+    function checkAge(age) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if(userId > 0) {
-                    resolve({ id: userId, name: `User ${userId}` })
+                if (age >= 18) {
+                    resolve("Доступ разрешен")
                 } else {
-                    reject("Invalid user ID")
+                    reject("Вам менее 18 лет, алкоголь запрещен")
                 }
-            }, 5000)
+            }, 1000)
         })
     }
 
-    // loadUserData(1)
-    //     .then(user => {
-    //         user.isAdmin = false
-    //         console.log(`Данные для ${user}`)
-    //     }).catch(error => {
-    //     console.log(`Ошибка ${error}`)
-    // })
-
-    Promise.all([loadUserData(1), loadUserData(2), loadUserData(3)])
-        .then(res => {
-            console.log(`Все пользователи ${res}`)
+    checkAge(17)
+        .then(message => {
+            console.log(message)
+            return "Можно покупать алкоголь"
         })
         .catch(err => {
-            console.log(`Ошибка ${err}`)
+            console.log(err)
+        })
+        .finally(() => {
+            console.log("Проверка завершина")
         })
 
 </script>
