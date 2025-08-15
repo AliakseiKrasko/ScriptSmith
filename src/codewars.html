@@ -16,8 +16,6 @@
                     reject("Invalid user ID")
                 }
             }, 5000)
-        }).finally(() => {
-            console.log(`Загрузка для пользователя ${userId} завершина`)
         })
     }
 
@@ -29,7 +27,7 @@
     //     console.log(`Ошибка ${error}`)
     // })
 
-    Promise.all([loadUserData(1)], loadUserData(2), loadUserData(3), loadUserData(-2))
+    Promise.all([loadUserData(1), loadUserData(2), loadUserData(3), loadUserData(-2)])
         .then(res => {
             console.log(`Все пользователи ${res}`)
         })
