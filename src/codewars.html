@@ -19,10 +19,13 @@
         })
     }
 
-    checkAge(17)
+    checkAge(20)
         .then(message => {
             console.log(message)
             return "Можно покупать алкоголь"
+        })
+        .then(messageAge => {
+            console.log(messageAge)
         })
         .catch(err => {
             console.log(err)
