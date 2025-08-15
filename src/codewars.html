@@ -27,7 +27,7 @@
     //     console.log(`Ошибка ${error}`)
     // })
 
-    Promise.all([loadUserData(1), loadUserData(2), loadUserData(3), loadUserData(-2)])
+    Promise.all([loadUserData(1), loadUserData(2), loadUserData(3)])
         .then(res => {
             console.log(`Все пользователи ${res}`)
         })
