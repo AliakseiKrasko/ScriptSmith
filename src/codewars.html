@@ -8,21 +8,22 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
 
-    function countVowels(str) {
-        const lit = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
-        const lowerStr = str.toLowerCase()
-        let count = 0
-        for (let char of lowerStr) {
-            if (lit.includes(char)) {
-                count++
-            }
-        }
-        return count
+    function formatName(fullName) {
+        return fullName.trim().toLowerCase().split(/\s+/)
+            .map((word, index) =>
+                index === 0
+                    ? word.charAt(0).toUpperCase() + word.slice(1) // Фамилия полностью
+                    : word[0].toUpperCase() + '.' // Инициалы
+            )
+            .join(' ');
     }
 
-    console.log(countVowels("Привет мир!")); // 3 (и, е, и)
-    console.log(countVowels("JavaScript")); // 3 (a, a, i)
-    console.log(countVowels("БВГДЖЗКЛМН")); // 0
+
+    console.log(formatName("иванов иван иванович")); // "Иванов И.И."
+    console.log(formatName("ПЕТРОВ ПЕТР")); // "Петров П."
+    console.log(formatName("Сидорова")); // "Сидорова"
+
+
 </script>
 </body>
 </html>
