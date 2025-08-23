@@ -8,14 +8,21 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
 
-    function isPalindrome(str) {
-        const newStr = str.toLowerCase().replace(/[^a-zа-я0-9]/g, '')
-       return newStr.split('').reverse().join('') === newStr
+    function countVowels(str) {
+        const lit = ["а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"]
+        const lowerStr = str.toLowerCase()
+        let count = 0
+        for (let char of lowerStr) {
+            if (lit.includes(char)) {
+                count++
+            }
+        }
+        return count
     }
 
-    console.log(isPalindrome("А роза упала на лапу Азора")); // true
-    console.log(isPalindrome("JavaScript")); // false
-    console.log(isPalindrome("Madam")); // true
+    console.log(countVowels("Привет мир!")); // 3 (и, е, и)
+    console.log(countVowels("JavaScript")); // 3 (a, a, i)
+    console.log(countVowels("БВГДЖЗКЛМН")); // 0
 </script>
 </body>
 </html>
