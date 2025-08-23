@@ -8,21 +8,29 @@
 <script>
     //TODO: практика решения задач по нативным javascriptlog
 
-    function formatName(fullName) {
-        return fullName.trim().toLowerCase().split(/\s+/)
-            .map((word, index) =>
-                index === 0
-                    ? word.charAt(0).toUpperCase() + word.slice(1) // Фамилия полностью
-                    : word[0].toUpperCase() + '.' // Инициалы
-            )
-            .join(' ');
+    // API: https://jsonplaceholder.typicode.com/users
+
+    function fetchUsers() {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => {
+                if(!res.ok) {
+                    throw new Error(`Ошибка: ${res.status}`)
+                }
+                return res.json()
+            })
+            .then(users => {
+                console.log(`Имя пользователей:`, users)
+                users.forEach(user => {
+                    console.log(`Имя: ${user.name}, email: ${user.email}`)
+                })
+            })
+
+            .catch(err => {
+                console.error(`Ошибка: ${err}`)
+            })
     }
 
-
-    console.log(formatName("иванов иван иванович")); // "Иванов И.И."
-    console.log(formatName("ПЕТРОВ ПЕТР")); // "Петров П."
-    console.log(formatName("Сидорова")); // "Сидорова"
-
+    fetchUsers();
 
 </script>
 </body>
