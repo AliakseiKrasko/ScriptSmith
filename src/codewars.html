@@ -6,11 +6,12 @@
 </head>
 <body>
 <script>
- function toLowerCase(str) {
-     return str.toLowerCase().split(' ').map(word => word ? word[0].toUpperCase() + word.slice(1).toLowerCase() : '')
- }
+    function getUniqueElements(arr) {
+        return [...new Set(arr)]
+    }
 
- console.log(toLowerCase('Привет как дела?'))
+    console.log(getUniqueElements([1, 2, 2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
+    console.log(getUniqueElements(['a', 'b', 'a', 'c', 'b'])); // ['a', 'b', 'c']
 </script>
 </body>
 </html>
