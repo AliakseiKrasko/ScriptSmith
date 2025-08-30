@@ -6,12 +6,16 @@
 </head>
 <body>
 <script>
-    function sumEvenNumbers(arr) {
-        return arr.reduce((acc, el) => el % 2 === 0 ? acc + el : acc, 0)
+    function findMinMax(arr) {
+        return {
+            max: Math.max(...arr),
+            min: Math.min(...arr)
+        }
+
     }
 
-    console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6])); // 12 (2 + 4 + 6)
-    console.log(sumEvenNumbers([10, 15, 20, 25])); // 30 (10 + 20)
+    console.log(findMinMax([5, 2, 8, 1, 9])); // { min: 1, max: 9 }
+    console.log(findMinMax([-10, 0, 15, -5])); // { min: -10, max: 15 }
 </script>
 </body>
 </html>
